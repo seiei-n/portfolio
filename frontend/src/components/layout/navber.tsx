@@ -6,6 +6,7 @@ export function Navbar() {
         <nav className={styles.navbar}>
             <div className="container">
                 <div className={styles.link}>
+                    <Link href="/">Home</Link>
                     <Link href="/works">Works</Link>
                     <Link href="/blog">Blog</Link>
                     <Link href="/contact">Contact</Link>
