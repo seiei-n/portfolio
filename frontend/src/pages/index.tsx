@@ -17,7 +17,25 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className={styles.profile}></div>
+            <div className={styles.profile}>
+                
+                <a className={styles.profiletext}>
+                    <h1>SEIEI NAGAHAMA</h1>
+                    B3 student<br></br>
+                    Dept. of ICS, Saitama University<br></br>
+                    Age : 21 <br></br>
+                    From : Sasebo, Nagasaki <br></br>
+                    a.k.a : 2xsei<br></br>
+                </a>
+                <a className={styles.profilepic}>
+                    <Image
+                        src="/face.jpg"
+                        alt="profile"
+                        width={300}
+                        height={300}
+                    />
+                </a>
+            </div>
         </>
     );
 }
