@@ -1,11 +1,11 @@
-import styles from './footer.module.scss';  
+import styles from './footer.module.css';  
 
-export default function Footer() {
+export function Footer() {
     return (
         <footer className={styles.footer}>
         <div className={styles.container}>
             <div className={styles.left}>
-            <p>© 2021 Seiei</p>
+            <p>© 2023 Seiei</p>
             </div>
             <div className={styles.right}>
             <p>Powered by Next.js</p>
