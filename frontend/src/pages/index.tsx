@@ -29,7 +29,7 @@ export default function Home() {
                 </a>
                 <a className={styles.profilepic}>
                     <Image
-                        src="/face.jpg"
+                        src="/face.png"
                         alt="profile"
                         width={300}
                         height={300}
