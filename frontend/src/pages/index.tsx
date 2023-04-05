@@ -36,6 +36,15 @@ export default function Home() {
                     />
                 </a>
             </div>
+            <div className={styles.works}>
+                <h1>Works</h1>
+            </div>
+            <div className={styles.blog}>
+                <h1>Blog</h1>
+            </div>
+            <div className={styles.contact}>
+                <h1>Contact</h1>
+            </div>
         </>
     );
 }
