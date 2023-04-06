@@ -18,7 +18,6 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className={styles.profile}>
-                
                 <a className={styles.profiletext}>
                     <h1>SEIEI NAGAHAMA</h1>
                     B3 student<br></br>
@@ -43,7 +42,9 @@ export default function Home() {
                 <h1>Blog</h1>
             </div>
             <div className={styles.contact}>
-                <h1>Contact</h1>
+               
+                    <h1>Contact</h1>
+                
             </div>
         </>
     );
