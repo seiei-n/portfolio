@@ -28,21 +28,35 @@
 
 .profile h1 {
     font-size: 1.5rem;
-    font-weight: 600;
     margin: 0;
     margin-top: 2rem;
 }
 
 .works {
   margin-left: 10%;
+  border-bottom: 4px solid #ccc;
+  width: 20%;
+
 }
 
 .blog {
   margin-left: 10%;
+  border-bottom: 4px solid #ccc;
+  width: 20%;
 }
 
-.contact {
+.contact  {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
+  
+}
+
+.contact h1 {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom:  4px solid #ccc;
+  width: 12%;
 }
