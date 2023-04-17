@@ -23,5 +23,11 @@
 .link a {
     /* letter spacing */
     letter-spacing: 0.1rem;
-    padding: 0 1rem;
-}
+    padding: 0 1.6rem;
+    @media screen and (max-width: 768px) {
+        letter-spacing: 0.05rem;
+        padding: 0 0.3rem;
+    }
+        
+    }
+
