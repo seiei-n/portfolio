@@ -1,15 +1,13 @@
-
-
 .profile {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
     margin-top: 2rem;
-    min-width:  35rem;
-    height: 20vh;
-
-    
+    gap: 3rem;
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
 }
 
 .profilepic {
@@ -19,44 +17,35 @@
 }
 
 .profilepic img {
-    height: 5%; 
+    height: 160px;
+    width: 160px;
     border-radius: 50%;
-    width: 70%;
-    
-    
 }
 
 .profile h1 {
     font-size: 1.5rem;
     margin: 0;
-    margin-top: 2rem;
-}
+    margin-bottom: 1rem;
+    @media screen and (max-width: 768px) {
+        text-align: center;
+    }
+      
+    }
+
 
 .works {
-  margin-left: 10%;
-  border-bottom: 4px solid #ccc;
-  width: 20%;
-
+    margin-left: 10%;
+    border-bottom: 4px solid #ccc;
+    width: 16rem;
 }
 
 .blog {
-  margin-left: 10%;
-  border-bottom: 4px solid #ccc;
-  width: 20%;
+    margin-left: 10%;
+    border-bottom: 4px solid #ccc;
+    width: 16rem;
 }
+ .bloglist {
+     width : 100%;
+     margin : 0 auto;
+ }
 
-.contact  {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-  
-}
-
-.contact h1 {
-   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom:  4px solid #ccc;
-  width: 12%;
-}

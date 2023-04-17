@@ -2,10 +2,18 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import List from "@/components/blog/list";
+import { getAllposts } from "@/lib/getposts";
+import { BlogCardParams } from "@/components/blog/card";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+type Props = {
+    blogs: BlogCardParams[];
+};
+
+export default function Home({ blogs }: Props) {
     return (
         <>
             <Head>
@@ -41,11 +49,18 @@ export default function Home() {
             <div className={styles.blog}>
                 <h1>Blog</h1>
             </div>
-            <div className={styles.contact}>
-               
-                    <h1>Contact</h1>
-                
+            <div className={styles.bloglist}>
+            <List blogs={blogs}  />
             </div>
         </>
     );
+}
+
+export async function getServerSideProps() {
+    const blogs = await getAllposts();
+    return {
+        props: {
+            blogs,
+        },
+    };
 }
