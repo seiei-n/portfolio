@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,9 +15,17 @@
     "@types/react-dom": "18.0.11",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
+    "gray-matter": "^4.0.3",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.0.3"
+    "rehype-stringify": "^9.0.3",
+    "remark-html": "^15.0.2",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "remark-slug": "^7.0.1",
+    "remark-toc": "^8.0.1",
+    "typescript": "5.0.3",
+    "unified": "^10.1.2"
   }
 }
