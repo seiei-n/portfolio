@@ -23,6 +23,7 @@ export default function List({ blogs }: Props) {
                     title={blog.title}
                     date={blog.date}
                     slug={blog.slug}
+                    author={blog.author}
                     key={blog.slug}
                 />
             ))}

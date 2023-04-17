@@ -1,4 +1,5 @@
 import styles from "./card.module.css"
+import Link from "next/link";
 /**
 Path: src/components/blog/card.module.css
 .card {
@@ -55,17 +56,22 @@ export type BlogCardParams = {
     title: string;
     date: string;
     slug: string;
+    author: string;
 };
 
 
 type Props = BlogCardParams;
 
-export default function Card({ title, date, slug }: Props) {
+export default function Card({ title, date, slug, author }: Props) {
     return (
+        
+        <Link href={`/blog/${slug}`}>
         <div className={styles.card}>
             <h2 className={styles.card__title}>{title}</h2>
             <p className={styles.card__created_at}>{date}</p>
-            <p className={styles.card__slug}>{slug}</p>
+            <p className={styles.card__slug}>{author}</p>
         </div>
-    );
+        </Link>
+
+          );
 }

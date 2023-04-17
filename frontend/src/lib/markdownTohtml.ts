@@ -1,20 +1,19 @@
 import { unified } from "unified";
 import { remark } from "remark";
-import html from "remark-html";
-import slug from "remark-slug";
-import toc from "remark-toc";
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
 
-export async function markdownToHtml({
-    markdown,
-}: {
-    markdown: string;
-}): Promise<string> {
+
+
+export  const markdownToHtml = async (markdown: string) => {
     const result = await unified()
-        .use(remark)
-        .use(slug)
-        .use(toc)
-        .use(html)
-        .process(markdown);
-    return result.toString();
+        .use(remarkParse)
+        .use(remarkRehype)
+        .use(rehypeStringify)
+        .process(markdown)
+    return result.toString()
 }
+
+
 

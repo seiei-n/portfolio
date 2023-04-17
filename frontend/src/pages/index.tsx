@@ -4,15 +4,13 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import List from "@/components/blog/list";
 import { getAllposts } from "@/lib/getposts";
+import { BlogCardParams } from "@/components/blog/card";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 type Props = {
-    blogs: {
-        title: string;
-        date: string;
-        slug: string;
-    }[];
+    blogs: BlogCardParams[];
 };
 
 export default function Home({ blogs }: Props) {
@@ -51,7 +49,9 @@ export default function Home({ blogs }: Props) {
             <div className={styles.blog}>
                 <h1>Blog</h1>
             </div>
-            <List blogs={blogs} />
+            <div className={styles.bloglist}>
+            <List blogs={blogs}  />
+            </div>
         </>
     );
 }

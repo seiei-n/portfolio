@@ -44,6 +44,8 @@
     border-bottom: 4px solid #ccc;
     width: 16rem;
 }
-
-
+ .bloglist {
+     width : 100%;
+     margin : 0 auto;
+ }
 
