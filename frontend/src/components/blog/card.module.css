@@ -2,7 +2,7 @@
 /** this is a blog card, blog have title, tags, description, created_at */
 
 .card {
-    width: 24rem;
+    width: 25vw;
     height: 12rem;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,12 @@
     border-radius: 0.5rem;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease-in-out;
-}
+    @media screen and (max-width: 768px) {
+        width: 75vw;
+    }
+        
+    }
+
 
 .card:hover {
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
