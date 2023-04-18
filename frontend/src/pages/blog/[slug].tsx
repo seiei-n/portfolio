@@ -16,7 +16,7 @@ export default function Blog({ blog, content }: Props) {
             <div className={styles.wrapper}>
                 <h1>{blog.title}</h1>
                 <h2>{blog.date} </h2>
-                <h4>author: {blog.author}</h4>
+                <h4>{blog.author}</h4>
             </div>
             <PostBody content={content} />
             
