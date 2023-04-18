@@ -4,6 +4,7 @@ import { BlogPostParams } from "@/lib/getposts";
 import { getPostBySlug } from "@/lib/getposts";
 import PostBody from "@/components/blog/postBody";
 
+
 type Props = {
     blog: BlogPostParams;
     content: string;
@@ -26,7 +27,7 @@ export default function Blog({ blog, content }: Props) {
 export const getServerSideProps = async (blog: any) => {
     const blogPost = await getPostBySlug(blog.params.slug);
     const content = await markdownToHtml(blogPost?.content || "");
-    console.log(blogPost);
+    // console.log(blogPost);
     return {
         props: {
             blog: blogPost,
