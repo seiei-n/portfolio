@@ -5,7 +5,7 @@ export function Footer() {
         <footer className={styles.footer}>
         <div className={styles.container}>
             <div className={styles.left}>
-            <p>© 2023 Seiei</p>
+            <p>© 2023 2xsei.com</p>
             </div>
             <div className={styles.right}>
             <p>Powered by Next.js</p>

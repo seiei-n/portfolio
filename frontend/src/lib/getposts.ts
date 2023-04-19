@@ -41,6 +41,7 @@ export type BlogPostParams = {
     slug: string;
     content: string;
     author: string;
+    type: string;
 };
 
 export const getPostBySlug = async (slug: string) => {

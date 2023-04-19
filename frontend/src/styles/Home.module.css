@@ -1,14 +1,13 @@
-
-
 .profile {
+    width: 100%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5rem;
-    margin-bottom: 2rem;
-    gap: 3rem;
+    gap: 2rem;
     @media (max-width: 768px) {
-        margin-top: 3rem;
+        margin-top: 2rem;
         flex-direction: column-reverse;
     }
 }
@@ -17,6 +16,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.profiletext br {
+    display: block;
+    content: "";
+    padding: calc(100% / 48) 0;
 }
 
 .profilepic img {
@@ -32,29 +36,68 @@
     @media screen and (max-width: 768px) {
         text-align: center;
     }
-      
+}
+
+
+.content {
+    margin-top: 2rem;
+    margin-left: calc(100% / 10);
+    border-bottom: 4px solid #ccc;
+    width: calc(100% / 7);
+    @media (max-width: 768px) {
+        margin: 2rem auto;
+        text-align: center;
+        width: calc(100% / 4);
     }
-
-
-.works {
-    margin-left: 10%;
-    border-bottom: 4px solid #ccc;
-    width: 16rem;
-}
-.works h1:hover {
-    color: #0066ff;
-    
-    
 }
 
-.blog {
-    margin-left: 10%;
-    border-bottom: 4px solid #ccc;
-    width: 16rem;
+.bloglist {
+    width: calc(100% / 1.35);
+    margin: 0 auto;
+    margin-bottom: auto;
 }
- .bloglist {
-     width : 100%;
-     margin : 0 auto;
-     margin-bottom: auto;
- }
 
+.button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #31383a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.showmore {
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+    text-align: center;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 10rem;
+    }
+}
+
+.showmore h2 {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 4px solid #ccc;
+    border-radius: 0;
+    font-size: 1.2rem;
+    color: #3d474c;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.showmore h2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}

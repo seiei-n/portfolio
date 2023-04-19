@@ -2,7 +2,7 @@
 /** this is a blog list, blogs have title, tags, description, created_at array **/
 
 .list {
-    width: 75%;
+    width: 100%;
     height: 100%;
     display: flex;
     gap: 1rem;
