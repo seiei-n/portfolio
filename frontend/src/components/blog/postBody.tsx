@@ -104,7 +104,6 @@ type Props = {
 };
 
 export default function PostBody({ content }: Props) {
-    console.log(content);
     return (
         <div className={styles.body}>
             <div className={styles.body__content} dangerouslySetInnerHTML={{ __html: content }} />

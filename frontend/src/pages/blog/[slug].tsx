@@ -26,7 +26,12 @@ export default function Blog({ blog, content }: Props) {
 
 export const getServerSideProps = async (blog: any) => {
     const blogPost = await getPostBySlug(blog.params.slug);
-    const content = await markdownToHtml(blogPost?.content || "");
+    if (!blogPost) {
+        return {
+            notFound: true,
+        };
+    }
+    const content = await markdownToHtml(blogPost.content || "");
     // console.log(blogPost);
     return {
         props: {

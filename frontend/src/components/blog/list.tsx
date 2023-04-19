@@ -13,12 +13,15 @@ Path: src/components/blog/list.module.css
 
 type Props = {
     blogs: BlogCardParams[];
+    startIndex?: number;
+    endIndex?: number;
 };
 
-export default function List({ blogs }: Props) {
+export default function List({ blogs, startIndex=0 , endIndex =999}: Props) {
+    const slicedBlogs = blogs.slice(startIndex, endIndex);
     return (
         <div className={styles.list}>
-            {blogs.map((blog) => (
+            {slicedBlogs.map((blog) => (
                 <Card
                     title={blog.title}
                     date={blog.date}

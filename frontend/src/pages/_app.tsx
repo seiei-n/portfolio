@@ -6,10 +6,13 @@ import "../styles/prism.css";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <div>
+        <>
+    
+            <div className="container">
             <Navbar />
             <Component {...pageProps} />
             <Footer />
-        </div>
+            </div>
+        </>
     );
 }

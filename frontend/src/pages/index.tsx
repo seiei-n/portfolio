@@ -5,7 +5,7 @@ import styles from "@/styles/Home.module.css";
 import List from "@/components/blog/list";
 import { getAllposts } from "@/lib/getposts";
 import { BlogCardParams } from "@/components/blog/card";
-
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,7 +36,7 @@ export default function Home({ blogs }: Props) {
                 </a>
                 <a className={styles.profilepic}>
                     <Image
-                        src="/face.png"
+                        src="/face.webp"
                         alt="profile"
                         width={300}
                         height={300}
@@ -44,14 +44,18 @@ export default function Home({ blogs }: Props) {
                 </a>
             </div>
             <div className={styles.works}>
-                <h1>Works</h1>
-            </div>
-            <div className={styles.blog}>
-                <h1>Blog</h1>
+                <Link href="/works"><h1>Works</h1></Link>
             </div>
             <div className={styles.bloglist}>
-            <List blogs={blogs}  />
+                <List blogs={blogs} startIndex={0} endIndex={1} />
             </div>
+            <div className={styles.blog}>
+                <Link href="/blog"><h1>Blog</h1></Link>
+            </div>
+            <div className={styles.bloglist}>
+                <List blogs={blogs} startIndex={0} endIndex={3} />
+            </div>
+            
         </>
     );
 }

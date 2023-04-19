@@ -3,8 +3,8 @@ import styles from "./navbar.module.css";
 
 export function Navbar() {
     return (
-        <nav className={styles.navbar}>
-            <div className="container">
+        <header className={styles.navbar}>
+            <div>
                 <div className={styles.link}>
                     <Link href="/">Home</Link>
                     <Link href="/works">Works</Link>
@@ -13,6 +13,8 @@ export function Navbar() {
                 </div>
               
             </div>
-        </nav>
+        </header>
     );
 }
+
+

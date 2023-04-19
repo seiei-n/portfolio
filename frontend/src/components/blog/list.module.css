@@ -2,12 +2,12 @@
 /** this is a blog list, blogs have title, tags, description, created_at array **/
 
 .list {
-    width: 80%;
+    width: 75%;
     height: 100%;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content:  center;
+    justify-content: left;
     margin :  1rem  auto ;
     
 }
