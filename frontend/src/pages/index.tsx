@@ -26,14 +26,34 @@ export default function Home({ blogs }: Props) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className={styles.profile}>
-                <a className={styles.profiletext}>
+                <div className={styles.profiletext}>
                     <h1>SEIEI NAGAHAMA</h1>
                     B3 student<br></br>
                     Dept. of ICS, Saitama University<br></br>
                     Age : 21 <br></br>
                     From : Sasebo, Nagasaki <br></br>
                     a.k.a : 2xsei<br></br>
-                </a>
+                    {/* twitter icon */}
+                    <a href="https://twitter.com/solehamugoiyo3">
+                        <Image
+                            priority={true}
+                            src="/twitter.svg"
+                            alt="twitter"
+                            width={30}
+                            height={30}
+                        />
+                    </a>
+                    {/* github icon */}
+                    <a href="https://github.com/seiei-n">
+                        <Image
+                            priority={true}
+                            src="/github-mark.svg"
+                            alt="github"
+                            width={30}
+                            height={30}
+                        />
+                    </a>
+                </div>
                 <a className={styles.profilepic}>
                     <Image
                         priority={true}
@@ -44,21 +64,45 @@ export default function Home({ blogs }: Props) {
                     />
                 </a>
             </div>
-            <div className={styles.works}>
-                <Link href="/works">
-                    <h1>Works</h1>
-                </Link>
-            </div>
-            <div className={styles.bloglist}>
-                <List blogs={blogs} startIndex={0} endIndex={1} />
-            </div>
-            <div className={styles.blog}>
-                <Link href="/blog">
-                    <h1>Blog</h1>
-                </Link>
-            </div>
-            <div className={styles.bloglist}>
-                <List blogs={blogs} startIndex={0} endIndex={3} />
+            <div className={styles.other}>
+                <div className={styles.content}>
+                    <Link href="/works">
+                        <h1>Works</h1>
+                    </Link>
+                </div>
+                <div className={styles.bloglist}>
+                    <List
+                        blogs={blogs}
+                        startIndex={0}
+                        endIndex={3}
+                        type="works"
+                    />
+                </div>
+                <div className={styles.showmore}>
+                    <Link href="/works">
+                        <h2>Show More</h2>
+                    </Link>
+                </div>
+
+                <div className={styles.content}>
+                    <Link href="/blog">
+                        <h1>Blog</h1>
+                    </Link>
+                </div>
+
+                <div className={styles.bloglist}>
+                    <List
+                        blogs={blogs}
+                        startIndex={0}
+                        endIndex={3}
+                        type="blog"
+                    />
+                </div>
+                <div className={styles.showmore}>
+                    <Link href="/blog">
+                        <h2>Show More</h2>
+                    </Link>
+                </div>
             </div>
         </>
     );

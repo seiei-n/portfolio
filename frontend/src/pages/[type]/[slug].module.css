@@ -1,0 +1,42 @@
+/* * write css */
+
+/* Main Content Styles */
+.main {
+    max-width: calc(100% - 5rem);
+    margin-left: 5rem;
+    margin-right: 5rem;
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+        width: 100%;
+        margin: 2rem auto;
+    }
+}
+.main .header {
+    @media screen and (max-width: 768px) {
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.content h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.content h2 {
+    margin-top: 40px;
+}
+
+.content ul {
+    padding-left: 20px;
+}
+
+.content ol {
+    padding-left: 20px;
+}

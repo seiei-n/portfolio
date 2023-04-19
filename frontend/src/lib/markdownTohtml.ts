@@ -19,7 +19,15 @@ import refractorKotlin from "refractor/lang/kotlin";
 import refractorPhp from "refractor/lang/php";
 import refractorPython from "refractor/lang/python";
 import refractorRuby from "refractor/lang/ruby";
-
+import refractorTypescript from "refractor/lang/typescript";
+import refractorYaml from "refractor/lang/yaml";
+import refractorBash from "refractor/lang/bash";
+import refractorC from "refractor/lang/c";
+import refractorCmake from "refractor/lang/cmake";
+import refractorDocker from "refractor/lang/docker";
+import refractorGit from "refractor/lang/git";
+import refractorIni from "refractor/lang/ini";
+import refractorGraphQL from "refractor/lang/graphql";
 
 refractor.register(refractorClike);
 refractor.register(refractorCpp);
@@ -34,6 +42,16 @@ refractor.register(refractorKotlin);
 refractor.register(refractorPhp);
 refractor.register(refractorPython);
 refractor.register(refractorRuby);
+refractor.register(refractorTypescript);
+refractor.register(refractorYaml);
+refractor.register(refractorBash);
+refractor.register(refractorC);
+refractor.register(refractorCmake);
+refractor.register(refractorDocker);
+refractor.register(refractorGit);
+
+refractor.register(refractorIni);
+refractor.register(refractorGraphQL);
 
 const rehypePrism = rehypePrismGenerater(refractor);
 

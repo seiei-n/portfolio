@@ -1,3 +1,4 @@
+import { type } from "os";
 import styles from "./card.module.css"
 import Link from "next/link";
 /**
@@ -57,19 +58,20 @@ export type BlogCardParams = {
     date: string;
     slug: string;
     author: string;
+    type : string;
 };
 
 
 type Props = BlogCardParams;
 
-export default function Card({ title, date, slug, author }: Props) {
+export default function Card({ title, date, slug, author , type}: Props) {
     return (
         
-        <Link href={`/blog/${slug}`} className={styles.card__wrapper}>
+        <Link href={`/${type}/${slug}`} className={styles.card__wrapper}>
         <div className={styles.card}>
             <h2 className={styles.card__title}>{title}</h2>
             <p className={styles.card__created_at}>{date}</p>
-            <p className={styles.card__slug}>{author}</p>
+            
         </div>
         </Link>
 

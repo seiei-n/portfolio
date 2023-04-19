@@ -1,3 +1,4 @@
+import { postFilter } from "@/lib/postFilter";
 import Card, { BlogCardParams } from "./card";
 import styles from "./list.module.css";
 /**
@@ -15,19 +16,30 @@ type Props = {
     blogs: BlogCardParams[];
     startIndex?: number;
     endIndex?: number;
+    type: string;
 };
 
-export default function List({ blogs, startIndex=0 , endIndex =999}: Props) {
-    const slicedBlogs = blogs.slice(startIndex, endIndex);
+export default function List({
+    blogs,
+    startIndex = 0,
+    endIndex = 999,
+    type,
+}: Props) {
+     if (type) {
+         blogs = postFilter(blogs, type);
+     }
+    const slicedPosts = blogs.slice(startIndex, endIndex);
+    if (!type)  return <div></div>;
     return (
         <div className={styles.list}>
-            {slicedBlogs.map((blog) => (
+            {slicedPosts.map((blog) => (
                 <Card
+                    key={blog.slug}
                     title={blog.title}
                     date={blog.date}
                     slug={blog.slug}
                     author={blog.author}
-                    key={blog.slug}
+                    type={blog.type}
                 />
             ))}
         </div>
