@@ -1,26 +1,31 @@
-
-// import { markdownTohtml } from "../lib/markdownTohtml";
-// import { markdownfile } from "../lib/markdownTohtml";
+import Card, { BlogCardParams } from "@/components/blog/card";
+import List from "@/components/blog/list";
+import { getAllposts } from "@/lib/getposts";
+import styles from "./works.module.css";
 
 type Props = {
-    markdown: string;
+    blogs: BlogCardParams[];
 };
 
-
-export default function Works({ markdown }: Props) {
-  return (
-    <div>
-      <h1>Works</h1>
-      {/* <div dangerouslySetInnerHTML={{ __html: markdown }} /> */}
-    </div>
-  );
+export default function Works({ blogs }: Props) {
+    return (
+        <div className={styles.main}>
+            <h1 className="styles.title">Works</h1>
+            <div className={styles.wrapper}>
+                <List
+                    blogs={blogs} startIndex={0} endIndex={1}
+                />
+             
+            </div>
+        </div>
+    );
 }
 
-// export async function getServerSideProps() {
-//     const markdown = await markdownTohtml(markdownfile);
-//     return {
-//         props: {
-//             markdown,
-//         },
-//     };
-// }
+export async function getServerSideProps() {
+    const blogs = await getAllposts();
+    return {
+        props: {
+            blogs,
+        },
+    };
+}

@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pageItem {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.pageLink {
+  display: inline-block;
+  padding: 5px 10px;
+  border: none;
+  background-color: #f7f7f7;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pageLink:hover {
+  background-color: #ddd;
+}

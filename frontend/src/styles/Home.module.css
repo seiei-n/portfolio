@@ -1,9 +1,10 @@
+
+
 .profile {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-top: 5rem;
     gap: 3rem;
     @media (max-width: 768px) {
         flex-direction: column-reverse;
@@ -38,6 +39,11 @@
     border-bottom: 4px solid #ccc;
     width: 16rem;
 }
+.works h1:hover {
+    color: #0066ff;
+    
+    
+}
 
 .blog {
     margin-left: 10%;
@@ -47,5 +53,6 @@
  .bloglist {
      width : 100%;
      margin : 0 auto;
+     margin-bottom: auto;
  }
 

@@ -65,7 +65,7 @@ type Props = BlogCardParams;
 export default function Card({ title, date, slug, author }: Props) {
     return (
         
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/blog/${slug}`} className={styles.card__wrapper}>
         <div className={styles.card}>
             <h2 className={styles.card__title}>{title}</h2>
             <p className={styles.card__created_at}>{date}</p>
