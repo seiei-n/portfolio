@@ -2,7 +2,6 @@
 
 .wrapper {
     width: 100%;
-
     display: flex;
     flex-direction: column;
 }
@@ -12,23 +11,24 @@
     max-width: 800px;
     margin: 7rem auto;
     @media screen and (max-width: 768px) {
-        margin: 2rem auto;
+        margin: 1rem auto;
         padding: 6px;
     }
 }
 
-.main h1 {
+.content{
+  margin: 2rem auto;
+}
+
+
+.content h2 {
     margin-top: 40px;
 }
 
-.main h2 {
-    margin-top: 40px;
-}
-
-.main ul {
+.content ul {
     padding-left: 20px;
 }
 
-.main ol {
+.content ol {
     padding-left: 20px;
 }
