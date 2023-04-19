@@ -36,6 +36,7 @@ export default function Home({ blogs }: Props) {
                 </a>
                 <a className={styles.profilepic}>
                     <Image
+                        priority={true}
                         src="/face.webp"
                         alt="profile"
                         width={300}
@@ -44,18 +45,21 @@ export default function Home({ blogs }: Props) {
                 </a>
             </div>
             <div className={styles.works}>
-                <Link href="/works"><h1>Works</h1></Link>
+                <Link href="/works">
+                    <h1>Works</h1>
+                </Link>
             </div>
             <div className={styles.bloglist}>
                 <List blogs={blogs} startIndex={0} endIndex={1} />
             </div>
             <div className={styles.blog}>
-                <Link href="/blog"><h1>Blog</h1></Link>
+                <Link href="/blog">
+                    <h1>Blog</h1>
+                </Link>
             </div>
             <div className={styles.bloglist}>
                 <List blogs={blogs} startIndex={0} endIndex={3} />
             </div>
-            
         </>
     );
 }
