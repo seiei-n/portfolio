@@ -5,6 +5,7 @@ import styles from "./blog.module.css";
 import Pagination from "@/components/blog/pagination";
 import React from "react";
 import { useState } from "react";
+import { Breadcrumb } from "@/components/layout/breadcrumb";
 
 
 type Props = {
@@ -25,15 +26,19 @@ export default function Blog({ blogs }: Props ){
 
     return (
         <div className={styles.main}>
+            <Breadcrumb />
             <h1 className="styles.title">Blog</h1>
             <div className={styles.wrapper}>
-                <List blogs={blogs}  startIndex={indexOfFirstPost} endIndex={indexOfLastPost} />
+                <List
+                    blogs={blogs}
+                    startIndex={indexOfFirstPost}
+                    endIndex={indexOfLastPost}
+                />
                 <Pagination
                     postsPerPage={postsPerPage}
                     totalPosts={blogs.length}
                     paginate={paginate}
                 />
-                
             </div>
         </div>
     );
