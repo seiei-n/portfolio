@@ -12,9 +12,11 @@
 }
 
 .link {
+    width: 100%;
     display: flex;
     flex-direction: row;
     text-decoration: none;
+    justify-content: center;
     color: #000;
     font-size: 1.5rem;
     font-weight: 600;
@@ -33,7 +35,6 @@
     letter-spacing: 0.1rem;
     padding: 0 1.6rem;
     @media screen and (max-width: 768px) {
-       
         letter-spacing: calc(100vw * (0.05 / 375));
         padding: 0 calc(100vw * (6 / 375));
     }
@@ -42,4 +43,8 @@
 .link a:hover {
     /* hover effect */
     color: #0066ff;
+}
+
+.langbtn {
+   margin-right: 10px;
 }

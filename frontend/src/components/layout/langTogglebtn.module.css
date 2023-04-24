@@ -1,0 +1,60 @@
+/* langTogglebtn.module.css */
+
+.langbtn {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.langbtn button {
+    outline: none;
+    display: block;
+    /* position: absolute; */
+    border: 2px solid #969a9d;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.langbtn button:before {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.4s ease;
+}
+
+.langbtn button.en {
+    background-color: #cfd0d1;
+    
+}
+.langbtn button.en .langtext {
+    text-align: right;
+    margin-right: 7px;
+}
+
+.langbtn button.en:before {
+    transform: translateX(0);
+}
+
+.langbtn button.ja {
+    background-color: #a8a8a8;
+}
+
+.langbtn button.ja .langtext {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.langbtn button.ja:before {
+    transform: translateX(100%);
+}

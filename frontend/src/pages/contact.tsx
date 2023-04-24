@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function Contact() {
     return (
         <div className={styles.main}>
-            <div className={styles.breadcrumb}>
+            <div className={styles.header}>
                 <Breadcrumb />
                 <h1>Contact</h1>
             </div>
