@@ -1,5 +1,17 @@
 .main {
-    margin-top: 7rem;
-    
+    /* margin-top: 7rem; */
+    margin-left: 5rem;
+    margin-right: 5rem;
+    height: 100%;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        margin: 2rem auto;
+    }
 }
 
+.main .header {
+    @media screen and (max-width: 768px) {
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+}
