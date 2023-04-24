@@ -1,4 +1,5 @@
 import styles from "./pagination.module.css";
+import { useState } from "react";
 
 type Props = {
     postsPerPage: number;
@@ -11,6 +12,7 @@ export default function Pagination({
     totalPosts,
     paginate,
 }: Props) {
+    const [activePage, setActivePage] = useState(1);
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
         pageNumbers.push(i);
@@ -21,8 +23,13 @@ export default function Pagination({
                 {pageNumbers.map((number) => (
                     <li key={number} className={styles.pageItem}>
                         <button
-                            onClick={() => paginate(number)}
-                            className={styles.pageLink}
+                            onClick={() => {
+                                paginate(number);
+                                setActivePage(number);
+                            }}
+                            className={`${styles.pageLink} ${
+                                number === activePage ? "active" : ""
+                            }`}
                         >
                             {number}
                         </button>

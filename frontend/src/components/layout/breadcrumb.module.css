@@ -1,12 +1,16 @@
 .breadcrumb {
     margin: 1rem 0;
-    font-size: 1.2rem;
+    font-size: 20px;
     color: #555;
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
 }
 
 .breadcrumb__list {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -21,6 +25,10 @@
 .breadcrumb__item:last-child {
     color: #777;
     font-weight: normal;
+    font-size: 30px;
+    @media screen and (max-width: 768px) {
+        font-size: 25px;
+    }
 }
 
 .breadcrumb__item_link,
@@ -31,12 +39,13 @@
 }
 
 .breadcrumb__item_link:hover {
-    color: #2196f3;
+    color: #9a9a9a;
 }
 
 .breadcrumb__item_current {
     color: #777;
-}
+    
+  }
 .breadcrumb__item:not(:last-child)::after {
     content: ">";
     position: absolute;
@@ -50,6 +59,6 @@
 
 .breadcrumb ol {
     padding: 0;
-    font-size: 2rem;
+    
     
 }

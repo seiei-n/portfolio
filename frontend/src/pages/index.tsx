@@ -80,7 +80,7 @@ export default function Home({ blogs }: Props) {
                 </div>
                 <div className={styles.showmore}>
                     <Link href="/works">
-                        <h2>Show More</h2>
+                        <h2>More</h2>
                     </Link>
                 </div>
 
@@ -100,7 +100,7 @@ export default function Home({ blogs }: Props) {
                 </div>
                 <div className={styles.showmore}>
                     <Link href="/blog">
-                        <h2>Show More</h2>
+                        <h2>More</h2>
                     </Link>
                 </div>
             </div>
