@@ -4,6 +4,17 @@ import { BlogCardParams } from "../components/blog/card";
 
 const postsDirectory = path.join(process.cwd(), "src", "_posts");
 
+
+export type BlogPostParams = {
+    title: string;
+    date: string;
+    slug: string;
+    content: string;
+    author: string;
+    type: string;
+    lang: string;
+};
+
 export const parseFrontMatter = <T extends object>(post: string) => {
     const [, frontMatter, ...content] = post.split("---");
     const parsedFrontMatter = frontMatter
@@ -35,14 +46,7 @@ export const getAllposts = async () => {
     return posts;
 };
 
-export type BlogPostParams = {
-    title: string;
-    date: string;
-    slug: string;
-    content: string;
-    author: string;
-    type: string;
-};
+
 
 export const getPostBySlug = async (slug: string) => {
     const paths = fs.readdirSync(postsDirectory);

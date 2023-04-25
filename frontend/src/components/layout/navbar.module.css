@@ -9,18 +9,26 @@
     border-image: linear-gradient(0deg, #e2e2e2 0%, #a0a0a0 100%);
     border-image-slice: 1;
     grid-row: 1;
+    @media screen and (max-width: 768px) 
+    {
+        justify-self: center;
+    }
+   
 }
 
 .link {
+    width: 100%;
     display: flex;
     flex-direction: row;
     text-decoration: none;
+    justify-content: center;
     color: #000;
     font-size: 1.5rem;
     font-weight: 600;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     @media screen and (max-width: 768px) {
+        display: none;
         width: 100%;
         justify-content: center;
         /* letter-spacing: 0.05rem;
@@ -33,7 +41,6 @@
     letter-spacing: 0.1rem;
     padding: 0 1.6rem;
     @media screen and (max-width: 768px) {
-       
         letter-spacing: calc(100vw * (0.05 / 375));
         padding: 0 calc(100vw * (6 / 375));
     }
@@ -43,3 +50,8 @@
     /* hover effect */
     color: #0066ff;
 }
+
+.langbtn {
+    margin-right: 10px;
+}
+
