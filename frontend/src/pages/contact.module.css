@@ -1,17 +1,29 @@
-.main {
+.main_jp {
     /* margin-top: 7rem; */
     margin-left: 5rem;
     margin-right: 5rem;
-    height: 100%;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        margin: 2rem auto;
+    }
+}
+.main_en {
+    /* margin-top: 7rem; */
+    color: rgb(0, 0, 0);
+    margin-left: 5rem;
+    margin-right: 5rem;
     @media screen and (max-width: 768px) {
         width: 100%;
         margin: 2rem auto;
     }
 }
 
-.main .header {
+ .header {
+    margin-left: 5rem;
+    margin-right: 5rem;
     @media screen and (max-width: 768px) {
         margin-bottom: 1rem;
         margin-left: 1rem;
     }
 }
+

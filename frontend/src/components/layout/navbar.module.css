@@ -9,6 +9,11 @@
     border-image: linear-gradient(0deg, #e2e2e2 0%, #a0a0a0 100%);
     border-image-slice: 1;
     grid-row: 1;
+    @media screen and (max-width: 768px) 
+    {
+        justify-self: center;
+    }
+   
 }
 
 .link {
@@ -23,6 +28,7 @@
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     @media screen and (max-width: 768px) {
+        display: none;
         width: 100%;
         justify-content: center;
         /* letter-spacing: 0.05rem;
@@ -46,5 +52,6 @@
 }
 
 .langbtn {
-   margin-right: 10px;
+    margin-right: 10px;
 }
+

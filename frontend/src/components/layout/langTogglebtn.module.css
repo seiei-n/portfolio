@@ -46,15 +46,15 @@
     transform: translateX(0);
 }
 
-.langbtn button.ja {
+.langbtn button.jp {
     background-color: #a8a8a8;
 }
 
-.langbtn button.ja .langtext {
+.langbtn button.jp .langtext {
     text-align: left;
     margin-left: 10px;
 }
 
-.langbtn button.ja:before {
+.langbtn button.jp:before {
     transform: translateX(100%);
 }

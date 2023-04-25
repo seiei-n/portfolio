@@ -1,24 +1,18 @@
-import { useState } from "react";
 import styles from "./langTogglebtn.module.css";
-
+import { useLanguage } from "@/hooks/toggleLang";
 
 export const LanguageToggle = () => {
-    const [language, setLanguage] = useState("EN");
-    const btnClassName = language === "EN" ? styles.en : styles.ja;
+    
+    const [language, setLanguage] = useLanguage("en");
 
-
-    const toggleLanguage = () => {
-        const newLanguage = language === "EN" ? "JP" : "EN";
-        setLanguage(newLanguage);
-        console.log(language);
-    };
+    
+    const btnClassName = language === "en" ? styles.en : styles.jp;
 
     return (
         <div className={styles.langbtn}>
-            <button onClick={toggleLanguage} className={btnClassName}>
+            <button className={btnClassName} onClick={() => setLanguage(language === "en" ? "ja" : "en")}>
                 <div className={styles.langtext}>{language}</div>
             </button>
         </div>
     );
 };
-
