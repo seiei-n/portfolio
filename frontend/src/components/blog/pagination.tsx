@@ -5,6 +5,7 @@ type Props = {
     postsPerPage: number;
     totalPosts: number;
     paginate: (pageNumber: number) => void;
+
 };
 
 export default function Pagination({
@@ -19,20 +20,23 @@ export default function Pagination({
     }
     return (
         <nav>
-            <ul className={styles.pagination}>
+            <ul className={styles.pagination} >
                 {pageNumbers.map((number) => (
                     <li key={number} className={styles.pageItem}>
-                        <button
+                        <div
                             onClick={() => {
                                 paginate(number);
                                 setActivePage(number);
                             }}
-                            className={`${styles.pageLink} ${
-                                number === activePage ? "active" : ""
-                            }`}
+                            className={styles.pageLink}
+                            style={
+                                number === activePage
+                                    ? { backgroundColor: "#ddd" }
+                                    : {}
+                            }
                         >
                             {number}
-                        </button>
+                        </div>
                     </li>
                 ))}
             </ul>

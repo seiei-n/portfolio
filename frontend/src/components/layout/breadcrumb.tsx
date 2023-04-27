@@ -5,6 +5,7 @@ import styles from "./breadcrumb.module.css";
 type BreadcrumbItem = {
     label: string;
     href: string;
+    
 };
 
 export function Breadcrumb() {
