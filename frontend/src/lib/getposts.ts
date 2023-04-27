@@ -48,6 +48,8 @@ export const getAllposts = async () => {
 
 
 
+
+
 export const getPostBySlug = async (slug: string) => {
     const paths = fs.readdirSync(postsDirectory);
     const post = paths
@@ -62,7 +64,7 @@ export const getPostBySlug = async (slug: string) => {
         .find((p) => p.slug === slug);
     //remove undefined
     if (!post) {
-        return null;
+        return  null;
     }
     return post;
 };
