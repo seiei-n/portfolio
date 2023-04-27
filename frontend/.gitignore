@@ -35,4 +35,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/src/_posts/test_*.md
+# ignore test posts
+/src/_posts/test_*.md 
+
+
+
+
