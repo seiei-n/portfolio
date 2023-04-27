@@ -9,25 +9,9 @@
     }
 }
 
-.wrapper {
-    padding: 1rem;
-    width: 100%;
-    margin: 1rem auto;
-}
-.wrapper li {
-    margin-top: 4rem;
-}
-
-.title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 1rem 0;
-}
-
 .main .header {
     @media screen and (max-width: 768px) {
         margin-bottom: 1rem;
         margin-left: 1rem;
-        z-index: 1;
     }
 }

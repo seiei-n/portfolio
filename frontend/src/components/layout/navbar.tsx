@@ -1,15 +1,71 @@
 import Link from "next/link";
 import styles from "./navbar.module.css";
+import React, { useState } from "react";
+import { LanguageToggle } from "./langTogglebtn";
 
 export function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <header className={styles.navbar}>
-            <div className={styles.link}>
-                <Link href="/">Home</Link>
-                <Link href="/works">Works</Link>
-                <Link href="/blog">Blog</Link>
-                <Link href="/contact">Contact</Link>
-            </div>
-        </header>
+        <div className={styles.main_nav}>
+            <header className={styles.navbar}>
+                <div className={styles.hamburger_menu}>
+                    <div
+                        className={
+                            styles.hamburger_menu_icon +
+                            " " +
+                            (isOpen ? styles.active : "")
+                        }
+                        onClick={toggleMenu}
+                    >
+                        <i></i>
+                    </div>
+                    <nav>
+                        <ul className={styles.hamburger_menu_content + " " + (isOpen ? styles.active : styles.inactive)}>
+                            <li className={styles.hamburger_menu_content_item}>
+                                <Link href="/" onClick={toggleMenu}>
+                                    Home
+                                </Link>
+                            </li>
+                            <li className={styles.hamburger_menu_content_item}>
+                                <Link href="/about" onClick={toggleMenu}>
+                                    About
+                                </Link>
+                            </li>
+                            <li className={styles.hamburger_menu_content_item}>
+                                <Link href="/works" onClick={toggleMenu}>
+                                    Works
+                                </Link>
+                            </li>
+                            <li className={styles.hamburger_menu_content_item}>
+                                <Link href="/blog" onClick={toggleMenu}>
+                                    Blog
+                                </Link>
+                            </li>
+                            <li className={styles.hamburger_menu_content_item}>
+                                <Link href="/contact" onClick={toggleMenu}>
+                                    Contact
+                                </Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div className={styles.link}>
+                    <Link href="/">Home</Link>
+                    <Link href="/about">About</Link>
+                    <Link href="/works">Works</Link>
+                    <Link href="/blog">Blog</Link>
+                    <Link href="/contact">Contact</Link>
+                </div>
+
+                <div className={styles.langbtn}>
+                    <LanguageToggle />
+                </div>
+            </header>
+        </div>
     );
 }
