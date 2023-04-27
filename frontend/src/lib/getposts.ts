@@ -46,9 +46,6 @@ export const getAllposts = async () => {
     return posts;
 };
 
-type NullPost = {
-    "Page not found": string;
-};
 
 
 
@@ -67,8 +64,7 @@ export const getPostBySlug = async (slug: string) => {
         .find((p) => p.slug === slug);
     //remove undefined
     if (!post) {
-        return  { "Page not found": "404" };
-       
+        return  null;
     }
     return post;
 };
