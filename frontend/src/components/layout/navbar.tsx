@@ -8,13 +8,14 @@ export function Navbar() {
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+        document.body.style.overflow = isOpen ? "visible" : "hidden";
     };
 
     return (
         <div className={styles.main_nav}>
             <header className={styles.navbar}>
                 <div className={styles.hamburger_menu}>
-                    <div
+                    <button
                         className={
                             styles.hamburger_menu_icon +
                             " " +
@@ -23,7 +24,7 @@ export function Navbar() {
                         onClick={toggleMenu}
                     >
                         <i></i>
-                    </div>
+                    </button>
                     <nav>
                         <ul className={styles.hamburger_menu_content + " " + (isOpen ? styles.active : styles.inactive)}>
                             <li className={styles.hamburger_menu_content_item}>
