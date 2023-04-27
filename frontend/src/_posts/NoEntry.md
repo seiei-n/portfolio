@@ -1,7 +1,7 @@
 ---
 title: "No Entry ... Coming Soon ..."
 date:
-slug: "work3"
+slug: "work-in-progress"
 description: 
 author: 
 thumbnail: 
