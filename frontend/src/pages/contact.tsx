@@ -1,4 +1,3 @@
-
 import styles from "./contact.module.css";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { useLanguage } from "@/hooks/toggleLang";
@@ -7,7 +6,7 @@ export default function Contact() {
     const [language, setLanguage] = useLanguage("EN");
 
     return (
-        <div>
+        <div className={styles.container}>
             <div className={styles.header}>
                 <Breadcrumb />
                 <h1>Contact</h1>
