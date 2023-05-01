@@ -59,6 +59,7 @@ export type BlogCardParams = {
     slug: string;
     author: string;
     type : string;
+    lang : string;
 };
 
 

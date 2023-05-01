@@ -5,7 +5,6 @@ export const LanguageToggle = () => {
     const [language, setLanguage] = useLanguage("en");
     if (typeof window === "object") {
         document.documentElement.lang = language;
-        document.title = language === "en" ? "Contact" : "お問い合わせ";
         document.documentElement.style.setProperty(
             "--lang_en",
             language === "en" ? "block" : "none"
