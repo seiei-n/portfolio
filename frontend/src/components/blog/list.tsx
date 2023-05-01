@@ -40,6 +40,7 @@ export default function List({
                     slug={blog.slug}
                     author={blog.author}
                     type={blog.type}
+                    lang={blog.lang}
                 />
             ))}
         </div>
