@@ -20,7 +20,4 @@ a {
     grid-template-columns: 100%;
     grid-template-rows: 5rem 1fr;
     min-height: 100dvh;
-    /* @media screen and (max-width: 768px) {
-       display: inline;
-    } */
 }
