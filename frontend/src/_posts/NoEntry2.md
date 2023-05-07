@@ -5,7 +5,7 @@ slug: "work-in-progress"
 description: 
 author: 
 thumbnail: 
-tags: 
+tags: "test"
 type: "works"
 ---
 

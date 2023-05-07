@@ -1,0 +1,21 @@
+
+.dark {
+    --bg-color: #24292e;
+    --text-color: #fff;
+    --border-color: #3f3f3f;
+    --box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.1);
+    --card-bg-color: #3f3f3f;
+   --invert: 1;
+   
+}
+
+.light {
+    --bg-color: #fff;
+    --text-color: #24292e;
+    --border-color: #3f3f3f;
+    --box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+    --card-bg-color: #fff;
+    --svg-fill: #24292e;
+    --invert: 0;
+}
+

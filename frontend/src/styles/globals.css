@@ -20,4 +20,7 @@ a {
     grid-template-columns: 100%;
     grid-template-rows: 5rem 1fr;
     min-height: 100dvh;
+    background-color:  var(--bg-color);
+    color: var(--text-color);
 }
+

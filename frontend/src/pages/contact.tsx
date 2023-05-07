@@ -1,6 +1,5 @@
 import styles from "./contact.module.css";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
-import { useLanguage } from "@/hooks/toggleLang";
 
 export default function Contact() {
     return (
@@ -9,10 +8,7 @@ export default function Contact() {
                 <Breadcrumb />
                 <h1>Contact</h1>
             </div>
-            <div
-                className={styles.main_en}
-                style={{ display: "var(--lang_en)" }}
-            >
+            <div className={styles.main} style={{ display: "var(--lang_en)" }}>
                 <div className={styles.content}>
                     <div className={styles.en}>
                         <h2>Get in touch</h2>
@@ -27,10 +23,7 @@ export default function Contact() {
                 </div>
             </div>
 
-            <div
-                className={styles.main_jp}
-                style={{ display: "var(--lang_jp)" }}
-            >
+            <div className={styles.main} style={{ display: "var(--lang_jp)" }}>
                 <div className={styles.content}>
                     <div className={styles.jp}></div>
                     <h2>お問い合わせ</h2>

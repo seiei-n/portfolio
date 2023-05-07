@@ -1,11 +1,11 @@
 ---
 title: "No Entry ... Coming Soon ..."
 date:
-slug: "work-in-progress"
+slug: "work-in-progress2"
 description:
 author:
 thumbnail:
-tags: "test","test2"
+tags: "test2"
 type: "blog"
 ---
 

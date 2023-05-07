@@ -1,9 +1,12 @@
 import styles from "./langTogglebtn.module.css";
 import { useLanguage } from "@/hooks/toggleLang";
+import { useEffect } from "react";
+import { useState } from "react";
 
 export const LanguageToggle = () => {
     const [language, setLanguage] = useLanguage("en");
-    if (typeof window === "object") {
+
+    useEffect(() => {
         document.documentElement.lang = language;
         document.documentElement.style.setProperty(
             "--lang_en",
@@ -13,7 +16,7 @@ export const LanguageToggle = () => {
             "--lang_jp",
             language === "ja" ? "block" : "none"
         );
-    }
+    }, [language]);
 
     const btnClassName = language === "en" ? styles.en : styles.jp;
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./navbar.module.css";
 import React, { useState } from "react";
 import { LanguageToggle } from "./langTogglebtn";
+import { ThemeToggle } from "./themeTogglebtn";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,13 @@ export function Navbar() {
                         <i></i>
                     </button>
                     <nav>
-                        <ul className={styles.hamburger_menu_content + " " + (isOpen ? styles.active : styles.inactive)}>
+                        <ul
+                            className={
+                                styles.hamburger_menu_content +
+                                " " +
+                                (isOpen ? styles.active : styles.inactive)
+                            }
+                        >
                             <li className={styles.hamburger_menu_content_item}>
                                 <Link href="/" onClick={toggleMenu}>
                                     Home
@@ -52,9 +59,16 @@ export function Navbar() {
                                     Contact
                                 </Link>
                             </li>
+                            <div className={styles.langbtn2}>
+                                <LanguageToggle />
+                            </div>
+                            <div className={styles.themebtn2}>
+                                <ThemeToggle />
+                            </div>
                         </ul>
                     </nav>
                 </div>
+
                 <div className={styles.link}>
                     <Link href="/">Home</Link>
                     <Link href="/about">About</Link>
@@ -65,6 +79,9 @@ export function Navbar() {
 
                 <div className={styles.langbtn}>
                     <LanguageToggle />
+                </div>
+                <div className={styles.themebtn}>
+                    <ThemeToggle />
                 </div>
             </header>
         </div>

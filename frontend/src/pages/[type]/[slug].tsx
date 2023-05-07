@@ -4,17 +4,19 @@ import { BlogPostParams } from "@/lib/getposts";
 import { getPostBySlug } from "@/lib/getposts";
 import PostBody from "@/components/blog/postBody";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
+import { tagstringToArray } from "@/lib/filter";
 
 type Props = {
     blog: BlogPostParams;
     content: string;
+    tags: string[];
 };
 
-export default function Blog({ blog, content }: Props) {
+export default function Blog({ blog, content, tags }: Props) {
     return (
         <div className={styles.main}>
             <header className={styles.header}>
-            <Breadcrumb />
+                <Breadcrumb />
             </header>
 
             <div className={styles.content}>
@@ -34,11 +36,13 @@ export const getServerSideProps = async (blog: any) => {
         };
     }
     const content = await markdownToHtml(blogPost.content || "");
+    const tags = tagstringToArray(blogPost.tags);
     // console.log(blogPost);
     return {
         props: {
             blog: blogPost,
             content,
+            tags,
         },
     };
 };

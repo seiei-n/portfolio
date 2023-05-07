@@ -3,6 +3,8 @@
     margin-left: 5rem;
     margin-right: 5rem;
     height: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     @media screen and (max-width: 768px) {
         width: 100%;
         margin: -1rem auto;
@@ -30,4 +32,19 @@
         margin-left: 1rem;
         z-index: 1;
     }
+}
+/*    <div className={styles.showtags}>
+                    {router.query.tag && (
+                        <div className={styles.tag}>
+                            tag:<span>{router.query.tag}</span>
+                        </div>
+                    )}
+                </div> */   
+
+.showtags {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
 }

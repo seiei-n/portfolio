@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { BlogCardParams } from "../components/blog/card";
 
+
 const postsDirectory = path.join(process.cwd(), "src", "_posts");
 
 
@@ -13,6 +14,7 @@ export type BlogPostParams = {
     author: string;
     type: string;
     lang: string;
+    tags: string;
 };
 
 export const parseFrontMatter = <T extends object>(post: string) => {
@@ -46,10 +48,6 @@ export const getAllposts = async () => {
     return posts;
 };
 
-
-
-
-
 export const getPostBySlug = async (slug: string) => {
     const paths = fs.readdirSync(postsDirectory);
     const post = paths
@@ -64,7 +62,7 @@ export const getPostBySlug = async (slug: string) => {
         .find((p) => p.slug === slug);
     //remove undefined
     if (!post) {
-        return  null;
+        return null;
     }
     return post;
 };
