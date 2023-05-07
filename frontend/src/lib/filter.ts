@@ -7,10 +7,16 @@ export const postFilter = (posts: BlogCardParams[], type: string) => {
 export const postFilterByTag = (posts: BlogCardParams[], tag: string) => {
    const filteredPosts = posts.filter((post) => {
         const tags = post.tags.split(",");
+    
         return tags.includes(tag);
     }
     );
+ 
     return filteredPosts;
+};
+
+export const postFilterByLang = (posts: BlogCardParams[], lang: string) => {
+    return posts.filter((post) => post.lang === lang);
 };
 
 export const tagstringToArray = (tags: string) => {

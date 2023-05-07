@@ -20,7 +20,7 @@ export default function Pagination({
     }
     return (
         <nav>
-            <ul className={styles.pagination} >
+            <ul className={styles.pagination}>
                 {pageNumbers.map((number) => (
                     <li key={number} className={styles.pageItem}>
                         <div
@@ -31,7 +31,7 @@ export default function Pagination({
                             className={styles.pageLink}
                             style={
                                 number === activePage
-                                    ? { backgroundColor: "#ddd" }
+                                    ? { backgroundColor: "#828282" }
                                     : {}
                             }
                         >

@@ -59,7 +59,7 @@
     margin-bottom: 1.6rem;
     text-align: center;
     @media screen and (max-width: 768px) {
-        margin-bottom: 10rem;
+        margin-bottom: 0rem;
     }
 }
 
@@ -81,4 +81,9 @@
 .showmore h2:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.other {
+    margin-bottom: 4rem;
+
 }

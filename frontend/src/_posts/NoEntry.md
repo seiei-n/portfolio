@@ -7,6 +7,7 @@ author:
 thumbnail:
 tags: "test","test2"
 type: "blog"
+lang : "en"
 ---
 
 Please stand by. This page is under construction.

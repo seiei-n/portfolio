@@ -11,13 +11,17 @@ export const ThemeToggle = () => {
     const btnClassName = theme === "light" ? styles.light : styles.dark;
 
     return (
-        <div className={styles.themebtn}>
-            <button
-                className={btnClassName}
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            >
-                <div className={styles.themetext}>{theme}</div>
-            </button>
+        <div className={styles.btn}>
+            <div className={styles.themebtn}>
+                <button
+                    className={btnClassName}
+                    onClick={() =>
+                        setTheme(theme === "light" ? "dark" : "light")
+                    }
+                >
+                    <div className={styles.themetext}>{theme}</div>
+                </button>
+            </div>
         </div>
     );
 };

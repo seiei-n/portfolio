@@ -12,14 +12,10 @@ type Props = {
 };
 
 export default function Home({ blogs }: Props) {
-    const num1 = postFilter (blogs, "blog").length;
-    const num2 = postFilter (blogs, "works").length;
-    if (num1 > 3) {
-        const num1 = 3;
-    }
-    if (num2 > 3) {
-        const num2 =3;
-    }
+    const num1 = postFilter(blogs, "works").length;
+    const num2 = postFilter(blogs, "blog").length;
+    const n1 = num1 > 3 ? 3 : num1;
+    const n2 = num2 > 3 ? 3 : num2;
     return (
         <>
             <Head>
@@ -32,7 +28,7 @@ export default function Home({ blogs }: Props) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Profile />
-            <div className={styles.other}>
+            <div className={styles.other} style={{ display: "var(--lang_jp)" }}>
                 <div className={styles.content}>
                     <Link href="/works">
                         <h1>Works</h1>
@@ -42,14 +38,15 @@ export default function Home({ blogs }: Props) {
                     <List
                         blogs={blogs}
                         startIndex={0}
-                        endIndex={num1+1}
+                        endIndex={n1}
                         type="works"
+                        lang="ja"
                     />
                 </div>
                 {num1 > 3 && (
                     <div className={styles.showmore}>
                         <Link href="/works">
-                        <h1 className={styles.showmore}>More</h1>
+                            <h2 className={styles.showmore}>More</h2>
                         </Link>
                     </div>
                 )}
@@ -64,18 +61,64 @@ export default function Home({ blogs }: Props) {
                     <List
                         blogs={blogs}
                         startIndex={0}
-                        endIndex={num2+1}
+                        endIndex={n2}
                         type="blog"
+                        lang="ja"
                     />
                 </div>
-                {num2  > 3 && (
+                {num2 >= 3 && (
                     <div className={styles.showmore}>
                         <Link href="/blog">
-                        <h1 className={styles.showmore}>More</h1>
+                            <h2 className={styles.showmore}>More</h2>
                         </Link>
                     </div>
                 )}
-               
+            </div>
+            <div className={styles.other} style={{ display: "var(--lang_en)" }}>
+                <div className={styles.content}>
+                    <Link href="/works">
+                        <h1>Works</h1>
+                    </Link>
+                </div>
+                <div className={styles.bloglist}>
+                    <List
+                        blogs={blogs}
+                        startIndex={0}
+                        endIndex={n1}
+                        type="works"
+                        lang="en"
+                    />
+                </div>
+                {num1 > 3 && (
+                    <div className={styles.showmore}>
+                        <Link href="/works">
+                            <h2 className={styles.showmore}>More</h2>
+                        </Link>
+                    </div>
+                )}
+
+                <div className={styles.content}>
+                    <Link href="/blog">
+                        <h1>Blog</h1>
+                    </Link>
+                </div>
+
+                <div className={styles.bloglist}>
+                    <List
+                        blogs={blogs}
+                        startIndex={0}
+                        endIndex={n2}
+                        type="blog"
+                        lang="en"
+                    />
+                </div>
+                {num2 >= 3 && (
+                    <div className={styles.showmore}>
+                        <Link href="/blog">
+                            <h2 className={styles.showmore}>More</h2>
+                        </Link>
+                    </div>
+                )}
             </div>
         </>
     );

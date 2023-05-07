@@ -15,7 +15,7 @@ export type BlogCardParams = {
 
 type Props = BlogCardParams;
 
-export default function Card({ title, date, slug, type, tags }: Props) {
+export default function Card({ title, date, slug, type, tags}: Props) {
     const tagArray = tagstringToArray(tags);
     const router = useRouter();
     return (
@@ -24,8 +24,10 @@ export default function Card({ title, date, slug, type, tags }: Props) {
                 <div className={styles.card__title}>
                     <Link href={`/${type}/${slug}`}>
                         <h2 className={styles.card__title}>{title}</h2>
-                        <p className={styles.card__created_at}>{date}</p>
                     </Link>
+                </div>
+                <div className={styles.card__created_at}>
+                    <p>{date}</p>
                 </div>
                 <div className={styles.card__tags}>
                     {tagArray.map((tag) => (
@@ -38,10 +40,16 @@ export default function Card({ title, date, slug, type, tags }: Props) {
                                     {tag}
                                 </p>
                             ) : (
-                                <p className={styles.card__tag}>{tag}</p>
+                                tag ? (
+                                    <p className={styles.card__tag}>{tag}</p>
+                                ) : (
+                                    <p></p>
+                                )
+                               
                             )}
                         </Link>
-                    ))}
+                        ))}
+                    
                 </div>
             </div>
         </div>

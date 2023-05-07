@@ -40,3 +40,29 @@
 .content ol {
     padding-left: 20px;
 }
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.tag {
+    display: flex;
+    flex-direction: row;
+}
+.tag p {
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.25rem;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.tag p:hover {
+    background-color: #7b7b7b;
+    color: #f1f1f1;
+}

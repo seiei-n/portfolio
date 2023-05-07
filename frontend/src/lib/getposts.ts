@@ -66,3 +66,24 @@ export const getPostBySlug = async (slug: string) => {
     }
     return post;
 };
+
+export const getPostsBySlugAndLang = async (slug: string, lang: string) => {
+
+    const paths = fs.readdirSync(postsDirectory);
+    const post = paths
+        .map((p) => {
+            const file = fs.readFileSync(path.join(postsDirectory, p));
+            const parsed = parseFrontMatter<BlogPostParams>(file.toString());
+            return {
+                ...parsed.frontMatter,
+                content: parsed.content,
+            };
+        })
+        .find((p) => p.slug === slug && p.lang === lang);
+    //remove undefined
+    if (!post) {
+        return null;
+    }
+
+    return post;
+}
