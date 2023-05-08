@@ -42,7 +42,7 @@ export default function About({ posts }: Props) {
 
 export async function getStaticProps() {
     const posts = await fetch(
-        "process.env.VERCEL_URL" + "/api/posts"
+        "process.env.VERCEL_URL" + "/api/get"
     ).then((res) => res.json());
     return {
         props: {
