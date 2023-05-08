@@ -1,22 +1,16 @@
-import { postFilter } from "@/lib/postFilter";
+import { postFilter, postFilterByLang } from "@/lib/filter";
 import Card, { BlogCardParams } from "./card";
 import styles from "./list.module.css";
-/**
-Path: src/components/blog/list.module.css
-.list {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
- */
+import { postFilterByTag } from "@/lib/filter";
+
 
 type Props = {
     blogs: BlogCardParams[];
     startIndex?: number;
     endIndex?: number;
     type: string;
+    lang?: string;
+    tags?: string[];
 };
 
 export default function List({
@@ -24,12 +18,26 @@ export default function List({
     startIndex = 0,
     endIndex = 999,
     type,
+    tags = [],
+    lang,
 }: Props) {
-     if (type) {
-         blogs = postFilter(blogs, type);
-     }
+    if (type) {
+        blogs = postFilter(blogs, type);
+
+    }
+    if (lang) {
+        blogs = postFilterByLang(blogs, lang);
+    }
+
+    if (tags.length > 0) {
+
+        for (let i = 0; i < tags.length; i++) {
+            blogs = postFilterByTag(blogs, tags[i]);
+        }
+    }
+
     const slicedPosts = blogs.slice(startIndex, endIndex);
-    if (!type)  return <div></div>;
+    if (!type) return <div></div>;
     return (
         <div className={styles.list}>
             {slicedPosts.map((blog) => (
@@ -40,6 +48,8 @@ export default function List({
                     slug={blog.slug}
                     author={blog.author}
                     type={blog.type}
+                    lang={blog.lang}
+                    tags={blog.tags}
                 />
             ))}
         </div>

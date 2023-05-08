@@ -4,15 +4,16 @@ import { Footer } from "@/components/layout/footer";
 import type { AppProps } from "next/app";
 import "../styles/prism.css";
 
+
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
-    
             <div className="container">
-            <Navbar />
-            <Component {...pageProps} />
-            <Footer />
+                <Navbar />
+                <Component {...pageProps} />
+                <Footer />
             </div>
         </>
     );
 }
+

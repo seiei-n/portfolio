@@ -1,13 +1,14 @@
 /* langTogglebtn.module.css */
 
-.langbtn {
+.themebtn {
     display: inline-block;
     position: relative;
     width: 60px;
     height: 34px;
 }
 
-.langbtn button {
+
+.themebtn button {
     outline: none;
     display: block;
     /* position: absolute; */
@@ -21,7 +22,7 @@
     transition: background-color 0.4s ease;
 }
 
-.langbtn button:before {
+.themebtn button:before {
     content: "";
     position: absolute;
     bottom: 4px;
@@ -33,28 +34,29 @@
     transition: transform 0.4s ease;
 }
 
-.langbtn button.jp {
+.themebtn button.dark {
     background-color: #cfd0d1;
     
 }
-.langbtn button.jp .langtext {
+.themebtn button.dark .themetext {
     text-align: right;
-    margin-right: 7px;
+    margin-right: 2px;
 }
 
-.langbtn button.jp:before {
+.themebtn button.dark:before {
     transform: translateX(0);
 }
 
-.langbtn button.en {
+.themebtn button.light {
     background-color: #ffffff;
 }
 
-.langbtn button.en .langtext {
+.themebtn button.light .themetext {
     text-align: left;
-    margin-left: 10px;
+    margin-left: 3px;
 }
 
-.langbtn button.en:before {
+.themebtn button.light:before {
     transform: translateX(100%);
 }
+

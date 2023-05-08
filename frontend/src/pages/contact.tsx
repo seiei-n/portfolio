@@ -1,23 +1,16 @@
 import styles from "./contact.module.css";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
-import { useLanguage } from "@/hooks/toggleLang";
 
 export default function Contact() {
-    const [language, setLanguage] = useLanguage("EN");
-
     return (
         <div className={styles.container}>
             <div className={styles.header}>
                 <Breadcrumb />
                 <h1>Contact</h1>
-                <div className={styles.language}>{language}</div>
             </div>
-            <div
-                className={styles.main_en}
-                style={{ display: language === "EN" ? "block" : "none" }}
-            >
+            <div className={styles.main} style={{ display: "var(--lang_en)" }}>
                 <div className={styles.content}>
-                    <div className={styles.EN}>
+                    <div className={styles.en}>
                         <h2>Get in touch</h2>
                         <p>
                             If you have any questions or would like to get in
@@ -30,12 +23,9 @@ export default function Contact() {
                 </div>
             </div>
 
-            <div
-                className={styles.main_jp}
-                style={{ display: language === "JA" ? "block" : "none" }}
-            >
+            <div className={styles.main} style={{ display: "var(--lang_jp)" }}>
                 <div className={styles.content}>
-                    <div className={styles.JP}></div>
+                    <div className={styles.jp}></div>
                     <h2>お問い合わせ</h2>
                     <p>
                         ご質問やお問い合わせがございましたら、お気軽にお問い合わせください。

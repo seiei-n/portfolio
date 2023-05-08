@@ -1,44 +1,113 @@
 import { markdownToHtml } from "@/lib/markdownTohtml";
 import styles from "./[slug].module.css";
-import { BlogPostParams } from "@/lib/getposts";
-import { getPostBySlug } from "@/lib/getposts";
+import { BlogPostParams, getPostsBySlugAndLang } from "@/lib/getposts";
 import PostBody from "@/components/blog/postBody";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
+import { tagstringToArray } from "@/lib/filter";
+import Link from "next/link";
 
 type Props = {
     blog: BlogPostParams;
-    content: string;
+    post_en: BlogPostParams;
+    post_ja: BlogPostParams;
+    content_en: string;
+    content_ja: string;
+    tags_en: string[];
+    tags_ja: string[];
 };
 
-export default function Blog({ blog, content }: Props) {
+export default function Blog({
+    post_en,
+    post_ja,
+    content_en,
+    content_ja,
+    tags_en,
+    tags_ja,
+}: Props) {
     return (
-        <div className={styles.main}>
-            <header className={styles.header}>
-            <Breadcrumb />
-            </header>
+        <>
+            <div className={styles.main} style={{ display: "var(--lang_en)" }}>
+                <header className={styles.header}>
+                    <Breadcrumb />
+                </header>
 
-            <div className={styles.content}>
-                <h1>{blog.title}</h1>
-                <h2>{blog.date} </h2>
-                <PostBody content={content} />
+                <div className={styles.content}>
+                    <h1>{post_en.title}</h1>
+                    <h2>{post_en.date} </h2>
+                    <div className={styles.tags}>
+                        {tags_en[0] ? (
+                            <Link
+                                href={{
+                                    pathname: `/${post_en.type}`,
+                                    query: { tag: tags_en[0] },
+                                }}
+                                className={styles.tag}
+                            >
+                                {tags_en.map((tag) => (
+                                    <p key={tag}> {tag}</p>
+                                ))}
+                            </Link>
+                        ) : (
+                            <p></p>
+                        )}
+                    </div>
+                    <PostBody content={content_en} />
+                </div>
             </div>
-        </div>
+            <div className={styles.main} style={{ display: "var(--lang_jp)" }}>
+                <header className={styles.header}>
+                    <Breadcrumb />
+                </header>
+
+                <div className={styles.content}>
+                    <h1>{post_ja.title}</h1>
+                    <h2>{post_ja.date} </h2>
+                    <div className={styles.tags}>
+                        {tags_ja[0] ? (
+                            <Link
+                                href={{
+                                    pathname: `/${post_ja.type}`,
+                                    query: { tag: tags_ja[0] },
+                                }}
+                                className={styles.tag}
+                            >
+                                {tags_ja.map((tag) => (
+                                    <p key={tag}> {tag}</p>
+                                ))}
+                            </Link>
+                        ) : (
+                            <p></p>
+                        )}
+                    </div>
+                    <PostBody content={content_ja} />
+                </div>
+            </div>
+        </>
     );
 }
 
 export const getServerSideProps = async (blog: any) => {
-    const blogPost = await getPostBySlug(blog.params.slug);
-    if (!blogPost) {
-        return {
-            notFound: true,
-        };
+    let blogPost_en = await getPostsBySlugAndLang(blog.params.slug, "en");
+    let blogPost_ja = await getPostsBySlugAndLang(blog.params.slug, "ja");
+    if (!blogPost_en) {
+        blogPost_en = blogPost_ja;
     }
-    const content = await markdownToHtml(blogPost.content || "");
-    // console.log(blogPost);
+
+    if (!blogPost_ja) {
+        blogPost_ja = blogPost_en;
+    }
+    const content_en = await markdownToHtml(blogPost_en?.content || "");
+    const content_ja = await markdownToHtml(blogPost_ja?.content || "");
+    const tags_en = tagstringToArray(blogPost_en?.tags || "");
+    const tags_ja = tagstringToArray(blogPost_ja?.tags || "");
     return {
         props: {
-            blog: blogPost,
-            content,
+            post_en: blogPost_en,
+            post_ja: blogPost_ja,
+            content_en,
+            content_ja,
+            tags_en,
+            tags_ja,
         },
     };
 };

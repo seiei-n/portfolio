@@ -5,8 +5,9 @@ slug: "work-in-progress"
 description: 
 author: 
 thumbnail: 
-tags: 
+tags: "test"
 type: "works"
+lang : "en"
 ---
 
 Please stand by. This page is under construction.

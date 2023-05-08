@@ -1,21 +1,21 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import List from "@/components/blog/list";
 import { getAllposts } from "@/lib/getposts";
 import { BlogCardParams } from "@/components/blog/card";
 import Link from "next/link";
 import { Profile } from "@/components/layout/profile";
-
-
-const inter = Inter({ subsets: ["latin"] });
+import { postFilter } from "@/lib/filter";
 
 type Props = {
     blogs: BlogCardParams[];
 };
 
 export default function Home({ blogs }: Props) {
+    const num1 = postFilter(blogs, "works").length;
+    const num2 = postFilter(blogs, "blog").length;
+    const n1 = num1 > 3 ? 3 : num1;
+    const n2 = num2 > 3 ? 3 : num2;
     return (
         <>
             <Head>
@@ -28,7 +28,7 @@ export default function Home({ blogs }: Props) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Profile />
-            <div className={styles.other}>
+            <div className={styles.other} style={{ display: "var(--lang_jp)" }}>
                 <div className={styles.content}>
                     <Link href="/works">
                         <h1>Works</h1>
@@ -38,15 +38,18 @@ export default function Home({ blogs }: Props) {
                     <List
                         blogs={blogs}
                         startIndex={0}
-                        endIndex={3}
+                        endIndex={n1}
                         type="works"
+                        lang="ja"
                     />
                 </div>
-                <div className={styles.showmore}>
-                    <Link href="/works">
-                        <h2>More</h2>
-                    </Link>
-                </div>
+                {num1 > 3 && (
+                    <div className={styles.showmore}>
+                        <Link href="/works">
+                            <h2 className={styles.showmore}>More</h2>
+                        </Link>
+                    </div>
+                )}
 
                 <div className={styles.content}>
                     <Link href="/blog">
@@ -58,15 +61,64 @@ export default function Home({ blogs }: Props) {
                     <List
                         blogs={blogs}
                         startIndex={0}
-                        endIndex={3}
+                        endIndex={n2}
                         type="blog"
+                        lang="ja"
                     />
                 </div>
-                <div className={styles.showmore}>
-                    <Link href="/blog">
-                        <h2>More</h2>
+                {num2 >= 3 && (
+                    <div className={styles.showmore}>
+                        <Link href="/blog">
+                            <h2 className={styles.showmore}>More</h2>
+                        </Link>
+                    </div>
+                )}
+            </div>
+            <div className={styles.other} style={{ display: "var(--lang_en)" }}>
+                <div className={styles.content}>
+                    <Link href="/works">
+                        <h1>Works</h1>
                     </Link>
                 </div>
+                <div className={styles.bloglist}>
+                    <List
+                        blogs={blogs}
+                        startIndex={0}
+                        endIndex={n1}
+                        type="works"
+                        lang="en"
+                    />
+                </div>
+                {num1 > 3 && (
+                    <div className={styles.showmore}>
+                        <Link href="/works">
+                            <h2 className={styles.showmore}>More</h2>
+                        </Link>
+                    </div>
+                )}
+
+                <div className={styles.content}>
+                    <Link href="/blog">
+                        <h1>Blog</h1>
+                    </Link>
+                </div>
+
+                <div className={styles.bloglist}>
+                    <List
+                        blogs={blogs}
+                        startIndex={0}
+                        endIndex={n2}
+                        type="blog"
+                        lang="en"
+                    />
+                </div>
+                {num2 >= 3 && (
+                    <div className={styles.showmore}>
+                        <Link href="/blog">
+                            <h2 className={styles.showmore}>More</h2>
+                        </Link>
+                    </div>
+                )}
             </div>
         </>
     );

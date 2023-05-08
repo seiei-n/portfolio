@@ -11,6 +11,14 @@ type BreadcrumbItem = {
 export function Breadcrumb() {
     const router = useRouter();
     const pathSegments = router.asPath.split("/").filter((s) => s);
+
+    if (pathSegments[pathSegments.length - 1].includes("?")) {
+        pathSegments[pathSegments.length - 1] = pathSegments[
+            pathSegments.length - 1
+        ].split("?")[0];
+    }
+
+
     const items: BreadcrumbItem[] = pathSegments.map((segment, index) => {
         const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
         return { label: segment, href };

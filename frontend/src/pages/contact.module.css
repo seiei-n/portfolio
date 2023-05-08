@@ -1,24 +1,17 @@
-.main_jp {
-    /* margin-top: 7rem; */
-    margin-left: 5rem;
-    margin-right: 5rem;
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        margin: 2rem auto;
-    }
-}
-.main_en {
+.main {
     /* margin-top: 7rem; */
     color: rgb(0, 0, 0);
     margin-left: 5rem;
     margin-right: 5rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     @media screen and (max-width: 768px) {
         width: 100%;
         margin: 2rem auto;
     }
 }
 
- .header {
+.header {
     margin-left: 5rem;
     margin-right: 5rem;
     @media screen and (max-width: 768px) {
@@ -26,9 +19,7 @@
         margin-left: 1rem;
     }
 }
- 
+
 .container {
     margin-top: -1rem;
-   
 }
-

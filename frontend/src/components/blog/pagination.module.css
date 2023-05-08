@@ -12,10 +12,10 @@
 
 .pageLink{
     display: inline-block;
-    padding: 12px 24px;
-    font-size: 1.5rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
     border: none;
-    background-color: #f7f7f7;
+    background-color: #dcdcdc;
     font-weight: bold;
     cursor: pointer;
 
@@ -25,6 +25,6 @@
 
 
 .pageLink:hover {
-    background-color: #ddd;
+    background-color:  #828282;
 }
 

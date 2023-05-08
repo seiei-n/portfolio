@@ -1,15 +1,33 @@
-
-
 .content {
     margin-top: 2rem;
     margin-left: calc(100% / 10);
-    border-bottom: 4px solid #ccc;
     width: calc(100% / 7);
+    position: relative;
+    border-bottom: 2px solid #ccc;
     @media (max-width: 768px) {
         margin: 2rem auto;
         text-align: center;
         width: calc(100% / 4);
     }
+}
+
+.content:hover {
+    border-bottom: 2px solid #ffffff00;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0;
+    background-color: #ccc;
+    transition: width 0.4s ease-in-out;
+}
+
+.content:hover::before {
+    width: 100%;
 }
 
 .bloglist {
@@ -30,6 +48,7 @@
     transition: all 0.3s ease;
     outline: none;
 }
+
 .button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -40,7 +59,7 @@
     margin-bottom: 1.6rem;
     text-align: center;
     @media screen and (max-width: 768px) {
-        margin-bottom: 10rem;
+        margin-bottom: 0rem;
     }
 }
 
@@ -48,11 +67,11 @@
     height: 100%;
     display: inline-block;
     padding: 1rem 1rem;
-    border: 4px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 0;
     font-size: 16px;
-    color: #3d474c;
-    background-color: white;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -62,4 +81,9 @@
 .showmore h2:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.other {
+    margin-bottom: 4rem;
+
 }
