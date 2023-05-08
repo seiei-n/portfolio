@@ -19,4 +19,5 @@ export default async function handler(
     } finally {
         client.release();
     }
+    
 }
