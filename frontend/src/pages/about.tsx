@@ -2,7 +2,14 @@ import Image from "next/image";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import styles from "./about.module.css";
 
-export default function About() {
+type Props = {
+    posts: any;
+};
+
+export default function About({ posts }: Props) {
+    const p = posts.posts;
+    console.log(p);
+
     return (
         <div className={styles.main}>
             <div className={styles.header}>
@@ -31,4 +38,16 @@ export default function About() {
             </div>
         </div>
     );
+}
+
+export async function getStaticProps() {
+    const posts = await fetch(
+        "process.env.VERCEL_URL" + "/api/posts"
+    ).then((res) => res.json());
+    return {
+        props: {
+            posts,
+        },
+        revalidate: 60,
+    };
 }
