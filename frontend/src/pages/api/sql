@@ -1,0 +1,13 @@
+ INSERT INTO posts_dev(title, date, slug, description, author, thumbnail, tags, type, lang, body) 
+VALUES (
+    'No Entry ... Coming Soon ...', 
+    '2023-04-20', 
+    'work-in-progress', 
+    NULL,
+    'test', 
+    'https://example.com/image.png', 
+    'test, test2',
+    'blog', 
+    'en', 
+    'No Entry ... Coming Soon ...'
+);

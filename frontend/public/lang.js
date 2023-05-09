@@ -16,7 +16,23 @@
             "--lang_jp",
             lang === "ja" ? "block" : "none"
         );
-    };
+        document.documentElement.style.setProperty(
+            "--lang_button_background",
+            lang === "en" ? "#ffffff" : "#cfd0d1"
+        );
+        document.documentElement.style.setProperty(
+            "--lang_button_translateX",
+            lang === "en" ? "translateX(100%)" : "translateX(0)"
+        );
+        document.documentElement.style.setProperty(
+            "--lang_button_text_align",
+            lang === "en" ? "left" : "right"
+        );
+        document.documentElement.style.setProperty(
+            "--lang_button_margin",
+            lang === "en" ? "8px" : "7px"
+        );
+    }
     if (lang === "ja") {
         document.documentElement.lang = "ja";
         document.documentElement.style.setProperty(
@@ -27,5 +43,21 @@
             "--lang_en",
             lang === "en" ? "block" : "none"
         );
-    };
+        document.documentElement.style.setProperty(
+            "--lang_button_background",
+            lang === "en" ? "#ffffff" : "#cfd0d1"
+        );
+        document.documentElement.style.setProperty(
+            "--lang_button_translateX",
+            lang === "en" ? "translateX(100%)" : "translateX(0%)"
+        );
+        document.documentElement.style.setProperty(
+            "--lang_button_text_align",
+            lang === "en" ? "left" : "right"
+        );
+        document.documentElement.style.setProperty(
+            "--lang_button_margin",
+            lang === "en" ? "8px" : "7px"
+        );
+    }
 })();

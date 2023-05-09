@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useLayoutEffect } from "react";
 
 export function useTheme(
     defaultValue: string
@@ -6,7 +6,7 @@ export function useTheme(
     const [themeInternal, setThemeInternal] = useState(defaultValue);
 
     // クライアントでの初期レンダリング直後にローカルストレージの設定を反映
-    useEffect(() => {
+    useLayoutEffect(() => {
         const theme = localStorage.getItem("theme");
         if (theme && theme !== defaultValue) {
             setThemeInternal(theme);

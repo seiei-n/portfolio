@@ -1,13 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback,  useState, useLayoutEffect,} from "react";
 
 
 export function useLanguage(
     defaultValue: string
 ): [language: string, setLanguage: (language: string) => void] {
     const [languageInternal, setLanguageInternal] = useState(defaultValue);
-
     // クライアントでの初期レンダリング直後にローカルストレージの設定を反映
-    useEffect(() => {
+    useLayoutEffect(() => {
         const language = localStorage.getItem('lang');
         if (language && language !== defaultValue) {
             setLanguageInternal(language);
@@ -22,6 +21,7 @@ export function useLanguage(
         },
         [setLanguageInternal]
     );
+
 
     return [languageInternal, setLanguage];
 }
