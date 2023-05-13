@@ -1,7 +1,7 @@
 import { markdownToHtml } from "@/lib/markdownTohtml";
 import styles from "./[slug].module.css";
 import { BlogPostParams, getPostsBySlugAndLang } from "@/lib/getposts";
-import PostBody from "@/components/blog/postBody";
+import PostBody from "@/components/post/postBody";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { tagstringToArray } from "@/lib/filter";
 import Link from "next/link";

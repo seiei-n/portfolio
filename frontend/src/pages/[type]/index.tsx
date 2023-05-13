@@ -1,9 +1,9 @@
-import Card, { BlogCardParams } from "@/components/blog/card";
-import List from "@/components/blog/list";
+import Card, { BlogCardParams } from "@/components/post/card";
+import List from "@/components/post/list";
 import { getAllposts } from "@/lib/getposts";
 import styles from "./index.module.css";
-import Pagination from "@/components/blog/pagination";
-import React from "react";
+import Pagination from "@/components/post/pagination";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { useRouter } from "next/router";
@@ -26,6 +26,8 @@ export default function Blog({ blogs }: Props) {
     const Utype = functionToUppercaseFirstLetter(type as string);
     // Filter the posts by type
     const filteredPosts = postFilter(blogs, type as string);
+    const cards_num_in_row = filteredPosts.length > 3 ? 3 : filteredPosts.length;
+    
 
     return (
         <>

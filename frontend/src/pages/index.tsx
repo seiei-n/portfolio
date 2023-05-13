@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import List from "@/components/blog/list";
+import List from "@/components/post/list";
 import { getAllposts } from "@/lib/getposts";
-import { BlogCardParams } from "@/components/blog/card";
+import { BlogCardParams } from "@/components/post/card";
 import Link from "next/link";
 import { Profile } from "@/components/layout/profile";
 import { postFilter } from "@/lib/filter";
@@ -25,9 +25,16 @@ export default function Home({ blogs }: Props) {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                <link rel="icon" href="/favicon.ico" />
+                {/* <link rel="icon" href="/favicon.ico" /> */}
             </Head>
             <Profile />
+            <div className={styles.showmore}>
+                <Link href="/about">
+                    <div style={{}}>
+                        <h2>About Me</h2>
+                    </div>
+                </Link>
+            </div>
             <div className={styles.other} style={{ display: "var(--lang_jp)" }}>
                 <div className={styles.content}>
                     <Link href="/works">

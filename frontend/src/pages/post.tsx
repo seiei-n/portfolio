@@ -1,4 +1,4 @@
-import { BlogCardParams } from "@/components/blog/card";
+import { BlogCardParams } from "@/components/post/card";
 
 type Props = {
     posts: string[];
@@ -22,4 +22,4 @@ export const getServerSideProps = async () => {
             posts: posts,
         },
     };
-}
+};

@@ -4,30 +4,22 @@
     var theme = (() => {
         const before = localStorage.getItem("theme");
         if (before) {
+            console.log("before");
             return before;
         }
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            localStorage.setItem("theme", "dark");
             return "dark";
         }
+        localStorage.setItem("theme", "light");
         return "light";
     })();
     if (theme === "dark") {
-        document.documentElement.className = "dark";
-        document.documentElement.style.setProperty(
-            "--theme_button_background",
-            theme === "light" ? "#ffffff" : "#cfd0d1"
-        );
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
         document.documentElement.style.setProperty(
             "--theme_button_translateX",
-            theme === "light" ? "translateX(100%)" : "translateX(0)"
-        );
-        document.documentElement.style.setProperty(
-            "--theme_button_text_align",
-            theme === "light" ? "left" : "right"
-        );
-        document.documentElement.style.setProperty(
-            "--theme_button_left",
-            theme === "light" ? "5px" : "30px"
+            "translateX(0)"
         );
         document.documentElement.style.setProperty(
             "--theme_button_content",
@@ -35,22 +27,11 @@
         );
     }
     if (theme === "light") {
-        document.documentElement.className = "light";
-        document.documentElement.style.setProperty(
-            "--theme_button_background",
-            theme === "light" ? "#ffffff" : "#cfd0d1"
-        );
+        document.documentElement.classList.add("light");
+        document.documentElement.classList.remove("dark");
         document.documentElement.style.setProperty(
             "--theme_button_translateX",
-            theme === "light" ? "translateX(100%)" : "translateX(0)"
-        );
-        document.documentElement.style.setProperty(
-            "--theme_button_text_align",
-            theme === "light" ? "left" : "right"
-        );
-        document.documentElement.style.setProperty(
-            "--theme_button_left",
-            theme === "light" ? "5px" : "30px"
+            "translateX(100%)"
         );
         document.documentElement.style.setProperty(
             "--theme_button_content",

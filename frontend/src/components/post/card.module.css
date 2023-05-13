@@ -1,0 +1,96 @@
+/** write card.module.css here **/
+/** this is a blog card, blog have title, tags, description, created_at */
+
+.card__wrapper {
+    --cards_num_in_row: 3;
+    width: calc(
+        (100% - 0.4rem * (var(--cards_num_in_row) - 1)) /
+            var(--cards_num_in_row)
+    );
+    display: block;
+
+    @media screen and (max-width: 768px) {
+        --cards_num_in_row: 1 !important;
+    }
+}
+
+.card {
+    width: 100%;
+    min-height: 12rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    transition: all 0.2s ease-in-out;
+    background-color: var(--card-bg-color);
+
+    /* @media screen and (max-width: 768px) {
+        width: 75vw;
+    } */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.card__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    margin-bottom: 0rem;
+}
+
+.card__tag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.card__tag__active {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #7b7b7b;
+    color: #f1f1f1;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.card__tag:hover {
+    background-color: #7b7b7b;
+    color: #f1f1f1;
+}
+
+.card__description {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.card__created_at {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #999;
+    margin-top: 0.5rem;
+}
+
+.card__thumbnail img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card__upper {
+    min-height: 10rem;
+}

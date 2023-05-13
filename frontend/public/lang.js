@@ -30,7 +30,11 @@
         );
         document.documentElement.style.setProperty(
             "--lang_button_margin",
-            lang === "en" ? "8px" : "7px"
+            lang === "en" ? "5px" : "30px"
+        );
+        document.documentElement.style.setProperty(
+            "--lang_button_content",
+            lang === "en" ? "'EN'" : "'JP'"
         );
     }
     if (lang === "ja") {
@@ -57,7 +61,11 @@
         );
         document.documentElement.style.setProperty(
             "--lang_button_margin",
-            lang === "en" ? "8px" : "7px"
+            lang === "en" ? "5px" : "30px"
+        );
+        document.documentElement.style.setProperty(
+            "--lang_button_content",
+            lang === "en" ? "'EN'" : "'JP'"
         );
     }
 })();

@@ -38,7 +38,7 @@ next-env.d.ts
 # ignore test posts
 /src/_posts/test_*.md
 
-/src/dummy/*
+/src/dummy
 
 
 
