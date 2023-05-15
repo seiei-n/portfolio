@@ -1,6 +1,6 @@
 ---
 title: "Smart Lock with ESP32"
-date:
+date:"2021-05-12"
 slug: "esp32-smart-lock"
 description: 
 author: 
