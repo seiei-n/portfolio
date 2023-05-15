@@ -4,18 +4,27 @@
 .card__wrapper {
     --cards_num_in_row: 3;
     width: calc(
-        (100% - 0.4rem * (var(--cards_num_in_row) - 1)) /
-            var(--cards_num_in_row)
+        (100% - 1rem * (var(--cards_num_in_row) - 1)) / var(--cards_num_in_row)
     );
     display: block;
 
     @media screen and (max-width: 768px) {
         --cards_num_in_row: 1 !important;
+        width: 100%;
+    };
+
+    @media screen and (max-width: 1024px) {
+        --cards_num_in_row: 2;
+        width: calc(
+            (100% - 1rem * (var(--cards_num_in_row) - 1)) /
+                var(--cards_num_in_row)
+        );
     }
 }
 
 .card {
     width: 100%;
+    height: 100%;
     min-height: 12rem;
     display: flex;
     flex-direction: column;
@@ -46,7 +55,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: auto;
     margin-bottom: 0rem;
 }
 
@@ -91,6 +99,3 @@
     height: 100%;
 }
 
-.card__upper {
-    min-height: 10rem;
-}

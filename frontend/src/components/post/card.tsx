@@ -27,7 +27,6 @@ export default function Card({
 }: Props) {
     const tagArray = tagstringToArray(tags);
     const router = useRouter();
-    console.log(thumbnail);
     const thumbnailUrl = thumbnail;
     return (
         <div className={styles.card__wrapper}>

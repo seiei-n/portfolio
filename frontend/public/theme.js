@@ -4,7 +4,6 @@
     var theme = (() => {
         const before = localStorage.getItem("theme");
         if (before) {
-            console.log("before");
             return before;
         }
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {

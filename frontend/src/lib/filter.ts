@@ -21,3 +21,17 @@ export const postFilterByLang = (posts: BlogCardParams[], lang: string) => {
 export const tagstringToArray = (tags: string) => {
     return tags.split(",").map((tag) => tag.trim());
 };
+
+
+export const getTotalPostsbylangandtype = (posts: BlogCardParams[], lang: string, type: string, tag?: string) => 
+{
+    if  (tag)
+    {
+        return postFilterByTag(postFilterByLang(postFilter(posts, type), lang), tag).length;
+    }
+    else
+    {
+        return postFilterByLang(postFilter(posts, type), lang).length;
+    }
+   
+}

@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { useRouter } from "next/router";
-import { postFilter } from "@/lib/filter";
+import { getTotalPostsbylangandtype, postFilter } from "@/lib/filter";
 import Link from "next/link";
 
 type Props = {
@@ -26,29 +26,45 @@ export default function Blog({ blogs }: Props) {
     const Utype = functionToUppercaseFirstLetter(type as string);
     // Filter the posts by type
     const filteredPosts = postFilter(blogs, type as string);
-    const cards_num_in_row = filteredPosts.length > 3 ? 3 : filteredPosts.length;
-    
 
     return (
         <>
             <div className={styles.main} style={{ display: "var(--lang_en)" }}>
                 <div className={styles.header}>
                     <Breadcrumb />
-                    <Link href={`/${type}`}>
-                        <h1>{Utype}</h1>
-                    </Link>
-                    <div className={styles.showtags}>
-                        {router.query.tag ? (
-                            <div className={styles.showtags}>
-                                tag:
-                                <div className={styles.tag}>
-                                    <span>{router.query.tag}</span>
-                                </div>
-                            </div>
-                        ) : (
-                            <div></div>
-                        )}
+                    <div className={styles.header2}>
+                        <Link href={`/${type}`}>
+                            <h1>{Utype}</h1>
+                        </Link>
+
+                        <h3>
+                            {getTotalPostsbylangandtype(
+                                blogs,
+                                "en",
+                                type as string,
+                                router.query.tag as string
+                            )}{" "}
+                            {getTotalPostsbylangandtype(
+                                blogs,
+                                "en",
+                                type as string,
+                                router.query.tag as string
+                            ) > 1
+                                ? "posts"
+                                : "post"}
+                        </h3>
                     </div>
+
+                    {router.query.tag ? (
+                        <div className={styles.showtags}>
+                            tag:
+                            <div className={styles.tag}>
+                                <span>{router.query.tag}</span>
+                            </div>
+                        </div>
+                    ) : (
+                        <div></div>
+                    )}
                 </div>
                 <div className={styles.wrapper}>
                     <List
@@ -63,7 +79,12 @@ export default function Blog({ blogs }: Props) {
                     />
                     <Pagination
                         postsPerPage={postsPerPage}
-                        totalPosts={filteredPosts.length}
+                        totalPosts={getTotalPostsbylangandtype(
+                            blogs,
+                            "en",
+                            type as string,
+                            router.query.tag as string
+                        )}
                         paginate={paginate}
                     />
                 </div>
@@ -74,6 +95,24 @@ export default function Blog({ blogs }: Props) {
                     <Link href={`/${type}`}>
                         <h1>{Utype}</h1>
                     </Link>
+                    <div className={styles.totalPosts}>
+                        <h3>
+                            {getTotalPostsbylangandtype(
+                                blogs,
+                                "en",
+                                type as string,
+                                router.query.tag as string
+                            )}{" "}
+                            {getTotalPostsbylangandtype(
+                                blogs,
+                                "en",
+                                type as string,
+                                router.query.tag as string
+                            ) > 1
+                                ? "posts"
+                                : "post"}
+                        </h3>
+                    </div>
 
                     {router.query.tag ? (
                         <div className={styles.showtags}>
@@ -99,7 +138,12 @@ export default function Blog({ blogs }: Props) {
                     />
                     <Pagination
                         postsPerPage={postsPerPage}
-                        totalPosts={filteredPosts.length}
+                        totalPosts={getTotalPostsbylangandtype(
+                            blogs,
+                            "ja",
+                            type as string,
+                            router.query.tag as string
+                        )}
                         paginate={paginate}
                     />
                 </div>

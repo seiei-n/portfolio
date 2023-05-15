@@ -52,3 +52,10 @@
     font-weight: 600;
     margin-right: 0rem;
 }
+
+.header2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
