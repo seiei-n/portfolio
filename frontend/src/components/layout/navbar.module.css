@@ -36,7 +36,7 @@
 }
 
 .link a {
-    margin: 0 2rem;
+    margin: 0 calc(100vw * (8 / 375));
     text-decoration: none;
     position: relative;
     @media screen and (max-width: 768px) {

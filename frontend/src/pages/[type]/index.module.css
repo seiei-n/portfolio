@@ -33,13 +33,7 @@
         z-index: 1;
     }
 }
-/*    <div className={styles.showtags}>
-                    {router.query.tag && (
-                        <div className={styles.tag}>
-                            tag:<span>{router.query.tag}</span>
-                        </div>
-                    )}
-                </div> */
+
 
 .showtags {
     display: flex;
@@ -57,4 +51,11 @@
     font-size: 0.75rem;
     font-weight: 600;
     margin-right: 0rem;
+}
+
+.header2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

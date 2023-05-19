@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  db:
+    container_name: db
+    env_file: 
+    - .env
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=${PG_USER}
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+      - TZ=Asia/Tokyo
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../backend/db:/var/lib/postgresql/data

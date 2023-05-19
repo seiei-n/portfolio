@@ -1,10 +1,11 @@
 import fs from "fs";
 import path from "path";
-import { BlogCardParams } from "../components/blog/card";
+import { BlogCardParams } from "../components/post/card";
 
+const postdir = process.env.POSTS_DIR || "_posts";
+console.log("postdir", postdir);
 
-const postsDirectory = path.join(process.cwd(), "src", "_posts");
-
+const postsDirectory = path.join(process.cwd(), "src", postdir);
 
 export type BlogPostParams = {
     title: string;
@@ -15,6 +16,7 @@ export type BlogPostParams = {
     type: string;
     lang: string;
     tags: string;
+    thumbnail: string;
 };
 
 export const parseFrontMatter = <T extends object>(post: string) => {
@@ -68,7 +70,6 @@ export const getPostBySlug = async (slug: string) => {
 };
 
 export const getPostsBySlugAndLang = async (slug: string, lang: string) => {
-
     const paths = fs.readdirSync(postsDirectory);
     const post = paths
         .map((p) => {
@@ -86,4 +87,4 @@ export const getPostsBySlugAndLang = async (slug: string, lang: string) => {
     }
 
     return post;
-}
+};

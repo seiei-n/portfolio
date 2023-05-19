@@ -1,12 +1,15 @@
-
 .dark {
     --bg-color: #24292e;
     --text-color: #fff;
     --border-color: #3f3f3f;
     --box-shadow: 0 0 0.5rem rgba(88, 88, 88, 0.1);
     --card-bg-color: #3f3f3f;
-   --invert: 1;
-   
+    --invert: 1;
+    --theme_button_background: #cfd0d1;
+    --theme_button_translateX: translateX(0);
+    --theme_button_text_align: right;
+    --theme_button_left: 30px;
+    --theme_button_content: dark;
 }
 
 .light {
@@ -17,5 +20,9 @@
     --card-bg-color: #fff;
     --svg-fill: #24292e;
     --invert: 0;
+    --theme_button_background: #ffff;
+    --theme_button_translateX: translateX(100%);
+    --theme_button_text_align: left;
+    --theme_button_left: 5px;
+    --theme_button_content: light;
 }
-
