@@ -92,20 +92,20 @@ export default function Blog({ blogs }: Props) {
             <div className={styles.main} style={{ display: "var(--lang_jp)" }}>
                 <div className={styles.header}>
                     <Breadcrumb />
-                    <Link href={`/${type}`}>
-                        <h1>{Utype}</h1>
-                    </Link>
-                    <div className={styles.totalPosts}>
+                    <div className={styles.header2}>
+                        <Link href={`/${type}`}>
+                            <h1>{Utype}</h1>
+                        </Link>
                         <h3>
                             {getTotalPostsbylangandtype(
                                 blogs,
-                                "en",
+                                "ja",
                                 type as string,
                                 router.query.tag as string
                             )}{" "}
                             {getTotalPostsbylangandtype(
                                 blogs,
-                                "en",
+                                "ja",
                                 type as string,
                                 router.query.tag as string
                             ) > 1

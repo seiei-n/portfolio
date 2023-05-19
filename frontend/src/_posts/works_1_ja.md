@@ -1,6 +1,6 @@
 ---
 title: "ESP32を使ったスマートロック"
-date: "2021-01-01"
+date: 
 slug: "esp32-smart-lock"
 description:
 author:
@@ -15,6 +15,6 @@ lang : "ja"
 
 ESP32とサーボモータを用いて、スマートロックを作成しました。
 
-リポジトリは[こちら](https://github.com/seiei-n/ESP32_SMART_LOCK    )です。
+リポジトリは[こちら](https://github.com/seiei-n/ESP32_SMART_LOCK)です。
 
 ブログ記事は現在準備中です。

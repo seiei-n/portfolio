@@ -24,5 +24,4 @@ I was not familiar with Web development, but I decided to create a portfolio sit
 I mainly implemented it using these technologies.
 
 ## Reason for selection
-
-First of all, it is a portfolio and blog site, so I wanted to use a technology stack that is easy to maintain and has high performance.
+I wanted to use SSR or SSG because it is a portfolio site and a blog site. Currently, NextJS and NuxtJS are the two giants, and I had experience with both, but I preferred NextJS and adopted it considering the future of .tsx notation. In addition, it was easy to host on Vercel, the development supervisor, and Vercel Storage could be used, so NextJS was promoted.

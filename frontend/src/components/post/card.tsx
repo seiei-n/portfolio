@@ -31,47 +31,56 @@ export default function Card({
     return (
         <div className={styles.card__wrapper}>
             <div className={styles.card}>
-                <Link href={`/${type}/${slug}`}>
-                    <div className={styles.card__upper}>
-                        {thumbnail ? (
-                            <div className={styles.card__thumbnail}>
-                                <Image
-                                    src={thumbnailUrl}
-                                    alt={title}
-                                    width={465}
-                                    height={480}
-                                />
+                <div className={styles.card__1}>
+                    <Link href={`/${type}/${slug}`}>
+                        <div className={styles.card__upper}>
+                            {thumbnail ? (
+                                <div className={styles.card__thumbnail}>
+                                    <Image
+                                        src={thumbnailUrl}
+                                        alt={title}
+                                        width={465}
+                                        height={480}
+                                    />
+                                </div>
+                            ) : (
+                                <div></div>
+                            )}
+                            <div className={styles.card__created_at}>
+                                <p>{date}</p>
                             </div>
-                        ) : (
-                            <div></div>
-                        )}
-                        <div className={styles.card__created_at}>
-                            <p>{date}</p>
+                            <div className={styles.card__title}>
+                                <h2 className={styles.card__title}>{title}</h2>
+                            </div>
                         </div>
-                        <div className={styles.card__title}>
-                            <h2 className={styles.card__title}>{title}</h2>
+                    </Link>
+                    <div className={styles.card__middle}>
+                        <div className={styles.card__tags}>
+                            {tagArray.map((tag) => (
+                                <Link
+                                    key={tag}
+                                    href={{
+                                        pathname: `/${type}`,
+                                        query: { tag },
+                                    }}
+                                >
+                                    {router.query.tag === tag ? (
+                                        <p className={styles.card__tag__active}>
+                                            {tag}
+                                        </p>
+                                    ) : tag ? (
+                                        <p className={styles.card__tag}>
+                                            {tag}
+                                        </p>
+                                    ) : (
+                                        <p></p>
+                                    )}
+                                </Link>
+                            ))}
                         </div>
                     </div>
-                </Link>
-
-                <div className={styles.card__tags}>
-                    {tagArray.map((tag) => (
-                        <Link
-                            key={tag}
-                            href={{ pathname: `/${type}`, query: { tag } }}
-                        >
-                            {router.query.tag === tag ? (
-                                <p className={styles.card__tag__active}>
-                                    {tag}
-                                </p>
-                            ) : tag ? (
-                                <p className={styles.card__tag}>{tag}</p>
-                            ) : (
-                                <p></p>
-                            )}
-                        </Link>
-                    ))}
                 </div>
+                <Link href={`/${type}/${slug}`} className="card__lower"></Link>
             </div>
         </div>
     );

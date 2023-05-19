@@ -1,6 +1,6 @@
 ---
 title: "Smart Lock with ESP32"
-date:"2021-05-12"
+date:
 slug: "esp32-smart-lock"
 description: 
 author: 
@@ -19,3 +19,4 @@ I created a smart lock using ESP32 and a servo motor.
 The repository is [here](https://github.com/seiei-n/ESP32_SMART_LOCK).
 
 The blog post is currently under construction.
+
