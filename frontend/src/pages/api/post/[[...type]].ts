@@ -24,9 +24,10 @@ export default async function handler(
 }
 
 function getAllPosts() {
+    
     return db.query(
         `
-        SELECT * FROM posts
+        SELECT * FROM ${process.env.TABLE_NAME}
         `
     );
 }
@@ -35,7 +36,7 @@ function getPostsByType(type: string) {
 
     return db.query(
         `
-        SELECT * FROM posts WHERE type = $1
+        SELECT * FROM ${process.env.TABLE_NAME} WHERE type = $1
         `,
         [type]
     );
@@ -44,7 +45,7 @@ function getPostsByType(type: string) {
 function getPostsByTypeAndTag(type: string, tag: string) {
     return db.query(
         `
-        SELECT * FROM posts WHERE type = $1 AND tag = $2
+        SELECT * FROM ${process.env.TABLE_NAME} WHERE type = $1 AND tag = $2
         `,
         [type, tag]
     );

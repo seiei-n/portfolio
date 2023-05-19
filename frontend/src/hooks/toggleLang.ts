@@ -7,7 +7,7 @@ export function useLanguage(
     const [languageInternal, setLanguageInternal] = useState(defaultValue);
     // クライアントでの初期レンダリング直後にローカルストレージの設定を反映
     useLayoutEffect(() => {
-        const language = localStorage.getItem('lang');
+        const language = sessionStorage.getItem('lang');
         if (language && language !== defaultValue) {
             setLanguageInternal(language);
         }
@@ -16,7 +16,7 @@ export function useLanguage(
     // 外部からのセッター呼び出し時にローカルストレージに値を保存する
     const setLanguage = useCallback(
         (language: string) => {
-            localStorage.setItem('lang', language);
+            sessionStorage.setItem('lang', language);
             setLanguageInternal(language);
         },
         [setLanguageInternal]

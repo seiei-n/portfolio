@@ -1,10 +1,20 @@
 (function initLang() {
     var lang = (() => {
-        const before = localStorage.getItem("lang");
+        const before =sessionStorage.getItem("lang");
         if (before) {
+
             return before;
+        }else{
+        if (navigator.language === "en-US") {
+        sessionStorage.setItem("lang", "en");
+            return "en";
+        }
+        if (navigator.language === "ja-JP") {
+        sessionStorage.setItem("lang", "ja");
+            return "ja";
         }
         return "ja";
+    }
     })();
     if (lang === "en") {
         document.documentElement.lang = "en";
