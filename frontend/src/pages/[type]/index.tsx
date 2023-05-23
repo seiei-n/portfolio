@@ -37,7 +37,7 @@ export default function Blog({ blogs }: Props) {
                             <h1>{Utype}</h1>
                         </Link>
 
-                        <h3>
+                        <h3 className={styles.total}>
                             {getTotalPostsbylangandtype(
                                 blogs,
                                 "en",
@@ -152,7 +152,7 @@ export default function Blog({ blogs }: Props) {
     );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const blogs = await getAllposts();
     return {
         props: {
@@ -160,6 +160,7 @@ export async function getServerSideProps() {
         },
     };
 }
+
 
 //to uppercase the first letter of the type
 const functionToUppercaseFirstLetter = (string: string) => {

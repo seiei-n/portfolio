@@ -131,7 +131,7 @@ export default function Home({ blogs }: Props) {
     );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const blogs = await getAllposts();
     return {
         props: {
@@ -139,3 +139,5 @@ export async function getServerSideProps() {
         },
     };
 }
+
+
