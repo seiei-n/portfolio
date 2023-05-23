@@ -1,16 +1,16 @@
 // Copyright https://github.com/sor4chi/portfolio-blog/blob/main/client/public/theme.js
 
 (function initTheme() {
-    var theme = (() => {
-        const before = localStorage.getItem("theme");
+    var theme = (() => { 
+        const before = sessionStorage.getItem("theme");
         if (before) {
             return before;
         }
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            localStorage.setItem("theme", "dark");
+            sessionStorage.setItem("theme", "dark");
             return "dark";
         }
-        localStorage.setItem("theme", "light");
+        sessionStorage.setItem("theme", "light");
         return "light";
     })();
     if (theme === "dark") {

@@ -80,7 +80,8 @@ export default function Card({
                         </div>
                     </div>
                 </div>
-                <Link href={`/${type}/${slug}`} className="card__lower"></Link>
+                <Link href={`/${type}/${slug}`} className={styles.card__2}>
+                </Link>
             </div>
         </div>
     );

@@ -1,10 +1,13 @@
 import { markdownToHtml } from "@/lib/markdownTohtml";
 import styles from "./[slug].module.css";
-import { BlogPostParams, getPostsBySlugAndLang } from "@/lib/getposts";
+import { BlogPostParams, getAllposts, getPostsBySlugAndLang, getSlugsbyType } from "@/lib/getposts";
 import PostBody from "@/components/post/postBody";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { tagstringToArray } from "@/lib/filter";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { get } from "http";
+import c from "refractor/lang/c";
 
 type Props = {
     blog: BlogPostParams;
@@ -86,7 +89,7 @@ export default function Blog({
     );
 }
 
-export const getServerSideProps = async (blog: any) => {
+export const getStaticProps = async (blog: any) => {
     let blogPost_en = await getPostsBySlugAndLang(blog.params.slug, "en");
     let blogPost_ja = await getPostsBySlugAndLang(blog.params.slug, "ja");
     if (!blogPost_en) {
@@ -111,3 +114,24 @@ export const getServerSideProps = async (blog: any) => {
         },
     };
 };
+
+export const getStaticPaths = async () => {
+    const blogs = await getSlugsbyType("blog");
+    const works = await getSlugsbyType("works");
+  
+    const paths =
+        [
+            ...blogs.map((blog) => ({
+                params: {type : "blog", slug: blog },
+            })),
+            ...works.map((work) => ({
+                params: { type : "works", slug: work },
+            })),
+        ] || [];
+        console.log(paths);
+    return {
+        paths,
+        fallback: false,
+    };
+};
+        
