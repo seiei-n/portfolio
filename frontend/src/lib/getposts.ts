@@ -88,3 +88,19 @@ export const getPostsBySlugAndLang = async (slug: string, lang: string) => {
 
     return post;
 };
+
+export const getSlugsbyType = async (type: string) => {
+    const paths = fs.readdirSync(postsDirectory);
+    const posts = paths
+        .map((p) => {
+            const file = fs.readFileSync(path.join(postsDirectory, p));
+            const parsed = parseFrontMatter<BlogPostParams>(file.toString());
+            return {
+                ...parsed.frontMatter,
+                content: parsed.content,
+            };
+        })
+        .filter((p) => p.type === type)
+        .map((p) => p.slug);
+    return posts;
+}
