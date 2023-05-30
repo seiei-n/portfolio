@@ -23,3 +23,10 @@
 .container {
     margin-top: -1rem;
 }
+
+.content {
+    @media screen and (max-width: 768px) {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

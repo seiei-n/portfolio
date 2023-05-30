@@ -16,8 +16,8 @@
     }
 }
 
-.profilepic img {
-    height: 160px;
-    width: 160px;
-    border-radius: 50%;
+.profile {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
 }
