@@ -17,7 +17,7 @@ export default function Contact() {
                             touch with me, please feel free to contact me.
                         </p>
                         <p>
-                            <a href="mailto:solehamugoyio@gmail.com">Here</a>
+                            <a href="mailto:seiei@2xsei.com">Here</a>
                         </p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ export default function Contact() {
                         ご質問やお問い合わせがございましたら、お気軽にお問い合わせください。
                     </p>
                     <p>
-                        <a href="mailto:solehamugoiyo@gmail.com">こちら</a>
+                        <a href="mailto:seiei@2xsei.com">こちら</a>
                     </p>
                 </div>
             </div>
