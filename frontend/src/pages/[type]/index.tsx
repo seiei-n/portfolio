@@ -9,6 +9,7 @@ import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { useRouter } from "next/router";
 import { getTotalPostsbylangandtype, postFilter } from "@/lib/filter";
 import Link from "next/link";
+import { GetServerSideProps } from "next/types";
 
 type Props = {
     blogs: BlogCardParams[];
@@ -152,7 +153,9 @@ export default function Blog({ blogs }: Props) {
     );
 }
 
-export async function getServerSideProps() {
+
+
+export const  getServerSideProps:   GetServerSideProps <Props> = async () => {
     const blogs = await getAllposts();
     return {
         props: {
