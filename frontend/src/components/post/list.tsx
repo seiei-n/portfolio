@@ -40,7 +40,11 @@ export default function List({
     if (!type) return <div></div>;
     return (
         <div className={styles.list}>
-            {slicedPosts.map((blog) => (
+            {slicedPosts.sort((a, b) => {
+                if (a.date < b.date) return 1;
+                if (a.date > b.date) return -1;
+                return 0;
+            }).map((blog) => (
                 <Card
                     key={blog.slug}
                     title={blog.title}
