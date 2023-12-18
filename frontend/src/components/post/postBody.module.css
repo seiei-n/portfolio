@@ -111,6 +111,7 @@
 
 .body__content a {
     text-decoration: underline;
+    word-break: break-all;
 }
 
 .body__content blockquote {
