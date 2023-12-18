@@ -5,11 +5,11 @@
 
             return before;
         }else{
-        if (navigator.language === "en-US") {
+        if (navigator.language === "en-US" || navigator.language === "en") {
         sessionStorage.setItem("lang", "en");
             return "en";
         }
-        if (navigator.language === "ja-JP") {
+        if (navigator.language === "ja-JP" || navigator.language === "ja") {
         sessionStorage.setItem("lang", "ja");
             return "ja";
         }
