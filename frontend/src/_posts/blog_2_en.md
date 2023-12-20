@@ -9,6 +9,8 @@ tags: "Web","Hono","Cloudflare Workers","D1","R2","Drizzle"
 type: "blog"
 lang : "en"
 ---
+## This article is the 18th day of the Hono Advent Calendar 2023
+<https://qiita.com/advent-calendar/2023/hono>
 
 # Background
 In my university class, I'm developing an ios app as a team. The app needed a backend, so I decided to use the hottest technology stack, Hono and Cloudflare Workers, to implement the backend. It's an MVP, so I didn't do anything fancy.
