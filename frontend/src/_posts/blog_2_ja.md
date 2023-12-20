@@ -10,6 +10,8 @@ type: "blog"
 lang : "ja"
 ---
 
+## この記事はHono Advent Calendar 2023の18日目の記事です。
+<https://qiita.com/advent-calendar/2023/hono>
 
 # 経緯
 私が通っている大学の授業の一環として、iosアプリのチーム開発を行っています。そのアプリでバックエンドが必要になり、せっかくなので今アツい技術スタックを使ってみたい！！！ということで、HonoとCloudflare Workersを使ってバックエンドを実装しました。といってもMVPなので、大層なことはしていません。
