@@ -9,16 +9,16 @@ export const Profile = () => (
                 <Link href="/about">
                     <div style={{ display: "var(--lang_en)" }}>
                         <h1>SEIEI NAGAHAMA</h1>
-                        B3 student<br></br>
-                        Dept. of ICS, Saitama University<br></br>
-                        Age : 22 <br></br>
+                        M1 student<br></br>
+                        Dept. of CS, Science Tokyo<br></br>
+                        Age : 24 <br></br>
                         From : Sasebo, Nagasaki <br></br>
                         a.k.a : 2xsei<br></br>
                     </div>
                     <div style={{ display: "var(--lang_jp)" }}>
                         <h1>長濱 聖英</h1>
-                        埼玉大学 工学部 情報工学科 3年<br></br>
-                        22歳<br></br>
+                        東京科学大学 情報理工学院情報工学系 修士1年<br></br>
+                        24歳<br></br>
                         出身地 : 長崎県佐世保市<br></br>
                         通称 : 2xsei<br></br>
                     </div>
